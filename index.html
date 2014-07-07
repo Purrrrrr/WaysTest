@@ -14,17 +14,15 @@
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="css/ng-animation.css">  
 </head>
-<body ng-app>
-  <h1>Testing ways...</h1>
-  <p>
-  {{msg}}
-  </p>
-  <script type="text/javascript" src="js/libs/angular.js/angular.js"></script>
-  <script type="text/javascript" src="js/libs/angular.js/angular-route.js"></script>
-  <script type="text/javascript" src="js/libs/angular-ui-bootstrap/ui-bootstrap.js"></script>
-  <script type="text/javascript" src="js/libs/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
-  <script type="text/javascript" src="js/libs/angular-ui/angular-ui.js"></script>
+<body ng-app="theways">
+  <div ui-view class="slide-top">
+  </div>
+  <script type="text/javascript" src="js/bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="js/bower_components/angular-animate/angular-animate.js"></script>
+  <script type="text/javascript" src="js/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script type="text/javascript" src="js/theways.js"></script>
 </body>
 </html>
 

@@ -87,8 +87,17 @@
       @include transform(translateX(100%));
     }
   }
-  .to-bottom &,
+  .to-bottom & {
+    @include transition-duration(100ms);
+    @include hidden-state {
+      opacity: 0;
+    }
+    @include shown-state {
+      opacity: 1;
+    }
+  }
   .from-bottom & {
+    @include transition-duration(800ms);
     @include hidden-state {
       opacity: 0;
     }

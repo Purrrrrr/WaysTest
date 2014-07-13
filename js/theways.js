@@ -1,4 +1,4 @@
-var theWaysApp = angular.module('theways', ['ngAnimate', 'ui.router']);
+var theWaysApp = angular.module('theways', ['ngAnimate', 'ngTouch', 'ui.router']);
 theWaysApp.config(function($stateProvider, $urlRouterProvider) {
   // For any unmatched url, redirect to /state1
   $urlRouterProvider.otherwise("/splash");
@@ -43,6 +43,9 @@ theWaysApp.config(function($stateProvider, $urlRouterProvider) {
 /* Animation class magik */
 .run(['$rootScope', '$state', function ($rootScope, $state) {
   
+  $rootScope.navigateTo = function(state) {
+    $state.go(state);
+  }
   $rootScope.viewClasses = []
   $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
     var viewClasses = [];
@@ -61,5 +64,5 @@ theWaysApp.config(function($stateProvider, $urlRouterProvider) {
       elem.toggleClass("empty-view", elem.children().length == 0);
     }
   };
-});;
+});
 

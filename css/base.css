@@ -56,6 +56,9 @@ nav {
   right: 0;
   bottom: 0;
 }
+.empty-view {
+  display: none;
+}
 
 .bar {
   background: rgba(0,0,0,0.4);

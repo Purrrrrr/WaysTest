@@ -1,0 +1,99 @@
+.animated {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@mixin transform ($value) {
+  transform: $value;
+  -ms-transform: $value;
+  -webkit-transform: $value;
+}
+@mixin transition-duration($value) {
+  transition-duration: $value;
+  -webkit-transition-duration: $value;
+}
+@mixin shown-state() {
+  &.ng-enter.ng-enter-active {
+    @content;
+  }
+  &.ng-leave {
+    @content;
+  }
+}
+@mixin hidden-state() {
+  &.ng-leave.ng-leave-active {
+    @content;
+  }
+  &.ng-enter {
+    @content;
+  }
+}
+
+.fading {
+  @include transition-duration(400ms);
+  @include hidden-state {
+    opacity: 0;
+  }
+  @include shown-state {
+    opacity: 1;
+  }
+}
+.slide-from-below {
+  @include transition-duration(400ms);
+  @include shown-state {
+    @include transform(translateY(0));
+  }
+  @include hidden-state {
+    @include transform(translateY(100%));
+  }
+}
+
+.sidesliding {
+  @include transition-duration(400ms);
+  .from-left.to-right & {
+    &.ng-enter {
+      @include transform(translateX(100%));
+    }
+    &.ng-enter-active {
+      @include transform(translateX(0));
+    }
+    &.ng-leave {
+      @include transform(translateX(0));
+    }
+    &.ng-leave-active {
+      @include transform(translateX(-100%));
+    }
+  }
+  .from-right.to-left & {
+    &.ng-enter {
+      @include transform(translateX(-100%));
+    }
+    &.ng-enter-active {
+      @include transform(translateX(0));
+    }
+    &.ng-leave {
+      @include transform(translateX(0));
+    }
+    &.ng-leave-active {
+      @include transform(translateX(100%));
+    }
+  }
+  .to-bottom &,
+  .from-bottom & {
+    @include hidden-state {
+      opacity: 0;
+    }
+    @include shown-state {
+      opacity: 1;
+    }
+  }
+}

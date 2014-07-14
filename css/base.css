@@ -12,14 +12,18 @@ html, body {
 #splashcontainer {
   margin: 0 auto;
   width: 441px;
+  max-width: 80%;
   position: relative;
-  top: 50%;
-  left: 0;
+  height: 100%;
 }
 #splashlogo{
-  position: relative;
-  top: -251px;
+  position: absolute;
+  top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  max-width: 100%;
 }
 
 .container {
@@ -61,6 +65,14 @@ nav {
 }
 .empty-view {
   display: none;
+}
+
+#circle {
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px; 
 }
 
 .bar {

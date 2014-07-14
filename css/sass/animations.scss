@@ -76,47 +76,47 @@
   }
 }
 
-.slide-from-below {
+.slide-from-right{
   @include transition-duration(400ms);
   @include shown-state {
-    @include transform(translateY(0));
+    @include transform(translateX(0));
   }
   @include hidden-state {
-    @include transform(translateY(100%));
+    @include transform(translateX(100%));
   }
 }
 
 .sidesliding {
   @include transition-duration(400ms);
-  .from-left.to-right & {
+  .from-top.to-bottom & {
     &.ng-enter {
-      @include transform(translateX(100%));
+      @include transform(translateY(100%));
     }
     &.ng-enter-active {
-      @include transform(translateX(0));
+      @include transform(translateY(0));
     }
     &.ng-leave {
-      @include transform(translateX(0));
+      @include transform(translateY(0));
     }
     &.ng-leave-active {
-      @include transform(translateX(-100%));
+      @include transform(translateY(-100%));
     }
   }
-  .from-right.to-left & {
+  .from-bottom.to-top & {
     &.ng-enter {
-      @include transform(translateX(-100%));
+      @include transform(translateY(-100%));
     }
     &.ng-enter-active {
-      @include transform(translateX(0));
+      @include transform(translateY(0));
     }
     &.ng-leave {
-      @include transform(translateX(0));
+      @include transform(translateY(0));
     }
     &.ng-leave-active {
-      @include transform(translateX(100%));
+      @include transform(translateY(100%));
     }
   }
-  .to-bottom & {
+  .to-right & {
     @include transition-duration(100ms);
     @include hidden-state {
       opacity: 0;
@@ -125,7 +125,7 @@
       opacity: 1;
     }
   }
-  .from-bottom & {
+  .from-right & {
     @include transition-duration(800ms);
     @include hidden-state {
       opacity: 0;

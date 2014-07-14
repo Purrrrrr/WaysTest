@@ -14,7 +14,7 @@ theWaysApp.config(function($stateProvider, $urlRouterProvider) {
   })
   .state('ways.map', {
     url: "/ways/map",
-    data: {position: "left"},
+    data: {position: "top"},
     views: {
       "map": {
         templateUrl: "partials/ways.map.html",
@@ -23,7 +23,7 @@ theWaysApp.config(function($stateProvider, $urlRouterProvider) {
   })
   .state('ways.list', {
     url: "/ways/list",
-    data: {position: "right"},
+    data: {position: "bottom"},
     views: {
       "list": {
         templateUrl: "partials/ways.list.html",
@@ -32,7 +32,7 @@ theWaysApp.config(function($stateProvider, $urlRouterProvider) {
   })
   .state('ways.details', {
     url: "/ways/way",
-    data: {position: "bottom"},
+    data: {position: "right"},
     views: {
       "details": {
         templateUrl: "partials/ways.details.html",

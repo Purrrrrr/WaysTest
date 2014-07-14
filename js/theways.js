@@ -42,13 +42,20 @@ theWaysApp.config(function($stateProvider, $urlRouterProvider) {
 })
 /* Animation class magik */
 .run(['$rootScope', '$state', function ($rootScope, $state) {
+  var prevState = null;
   
+  $rootScope.goBack = function() {
+    if (!prevState) return;
+      console.log(prevState);
+    $state.go(prevState);
+  }
   $rootScope.navigateTo = function(state) {
     $state.go(state);
   }
   $rootScope.viewClasses = []
   $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
     var viewClasses = [];
+    prevState = fromState.name;
     if (fromState.data && fromState.data.position) {
       viewClasses.push("from-"+fromState.data.position);
     }

@@ -2,6 +2,8 @@ body {
   background: black url(../images/city.png) fixed center top;
   color: white;
   overflow: hidden;
+  font-family: sans-serif;
+  font-variant: small-caps;
 }
 html, body {
   height: 100%;
@@ -57,27 +59,54 @@ nav {
   background: black url(../images/city.png) fixed center top;
   position: absolute;
   top: 0;
-  padding-top: 80px;
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: auto;
+  padding-top: 80px;
+  overflow: hidden;
 }
+.app-view .scrollable {
+  overflow: auto;
+  max-height: 100%;
+}
+.bottomTools {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 80px;
+}
+.bottomTools > .tools {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  line-height: 80px;
+  font-size: 30px;
+}
+
 .empty-view {
   display: none;
 }
 
-#circle {
+.circle {
   width: 50px;
   height: 50px;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px; 
+  border: 1px solid black;
 }
 
 .bar {
   background: rgba(0,0,0,0.4);
   padding: 15px 15px;
   margin: 15px 0;
-  list-style: none;
+}
+.slide-out .bar {
+  margin: 0;
 }

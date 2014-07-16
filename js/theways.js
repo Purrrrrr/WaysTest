@@ -1,12 +1,16 @@
-var theWaysApp = angular.module('theways', ['ngAnimate', 'ngTouch', 'ui.router']);
+var theWaysApp = angular.module('theways', ['ngAnimate', 'ngTouch', 'ui.router', 'google-maps']);
 theWaysApp.config(function($stateProvider, $urlRouterProvider) {
   // For any unmatched url, redirect to /state1
   $urlRouterProvider.otherwise("/splash");
   // Now set up the states
   $stateProvider
-  .state('splash', {
+  .state('ways.splash', {
     url: "/splash",
-    templateUrl: "partials/splash.html"
+    views: {
+      "splash": {
+        templateUrl: "partials/splash.html"
+      }
+    }
   })
   .state('ways', {
     abstract: true,
@@ -18,6 +22,7 @@ theWaysApp.config(function($stateProvider, $urlRouterProvider) {
     views: {
       "map": {
         templateUrl: "partials/ways.map.html",
+        controller: 'MapController',
       }
     }
   })
@@ -27,6 +32,7 @@ theWaysApp.config(function($stateProvider, $urlRouterProvider) {
     views: {
       "list": {
         templateUrl: "partials/ways.list.html",
+        controller: 'WayListController',
       }
     }
   })
@@ -46,7 +52,7 @@ theWaysApp.config(function($stateProvider, $urlRouterProvider) {
   
   $rootScope.goBack = function() {
     if (!prevState) return;
-      console.log(prevState);
+      //console.log(prevState);
     $state.go(prevState);
   }
   $rootScope.navigateTo = function(state) {

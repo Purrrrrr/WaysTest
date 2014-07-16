@@ -1,7 +1,12 @@
-<div ui-view="map" id="map-view" class="animated sidesliding app-view"></div>
-<div ui-view="list" id="list-view" class="animated sidesliding app-view"></div>
-<div ui-view="details" class="animated slide-from-right app-view"></div>
+<div id="background">
+</div>
 <nav>
   <div id="menubutton"></div>
   <div id="menulogo"></div>
 </nav>
+<div id="app-area">
+  <div ui-view="splash" id="map-view" class="animated fading app-view"></div>
+  <div ui-view="map" id="map-view" class="animated sidesliding app-view"></div>
+  <div ui-view="list" id="list-view" class="animated sidesliding app-view"></div>
+  <div ui-view="details" class="animated slide-from-right app-view"></div>
+</div>

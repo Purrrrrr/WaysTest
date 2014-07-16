@@ -1,8 +1,7 @@
 <div class="bottomTools">
-  <div ng-click="navigateTo('ways.details')" style="color: black; font-size: 180px; text-align: center; background: gray; position: absolute; top: 0px; left: 0; bottom: 0; right: 0;">
-    Kartta
-    <p style="font-size: 60px;">Tähän karttamerkkejä. Klikkaa edetäksesi</p>
-  </div>
+  <google-map draggable="true" grayscale center="map.center" zoom="map.zoom">
+    <marker ng-repeat="way in wayMarkers" click="gotoWay(way)" icon="'images/way-icon.png'" coords="way.position"></marker>
+  </google-map>
   <div ng-click="navigateTo('ways.list')" class="tools">
     Lista
   </div>

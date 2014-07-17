@@ -1,5 +1,8 @@
 <div class="bottomTools">
-  <div class="scrollable">
+  <div class="waysearch">
+    <input type="text" ng-model="search" placeholder="Search WAYs" />
+  </div>
+  <div class="waylist">
     <div ng-repeat="way in ways" ng-click="navigateTo('ways.details')" class="bar">
       <way name="way.name"></way>
       <div class="way-place">{{way.place}}</div>

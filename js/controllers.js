@@ -21,3 +21,8 @@ theWaysApp.controller('MapController', function($scope, $state, WaysService) {
     $scope.wayMarkers = ways;
   });
 });
+theWaysApp.controller('WayController', function($scope, $state, WaysService) {
+  WaysService.getWays({}, "", function(ways) {
+    $scope.way = ways[0];
+  });
+});

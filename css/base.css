@@ -1,5 +1,6 @@
 body {
-  background: black url(../images/city.png) fixed center top;
+  background: black url(../images/city.png) fixed center top; 
+  /* background: black url(../images/listtest.png) fixed center top; */
   color: white;
   overflow: hidden;
   font-family: sans-serif;
@@ -59,7 +60,27 @@ nav {
   bottom: 0;
   overflow: hidden;
 }
-.app-view .scrollable {
+.waysearch {
+  background: black;
+  height: 40px;
+  padding: 5px;
+}
+.waysearch input {
+  display: block;
+  background: #363636 no-repeat url(../images/search.png) 11px center;
+  font-size: 16px;
+  color: white;
+  height: 25px;
+  width: auto;
+  padding: 10px 10px 5px 50px;
+  border: none;
+}
+.waylist {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   overflow: auto;
   max-height: 100%;
 }

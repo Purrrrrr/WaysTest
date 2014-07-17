@@ -1,0 +1,70 @@
+.waysearch {
+  background: black;
+  height: $searchHeight - 10;
+  padding: 5px;
+}
+.waysearch input {
+  display: block;
+  background: #363636 no-repeat url(../images/search.png) 11px center;
+  font-size: 16px;
+  color: white;
+  height: $searchHeight - 10;
+  width: 100%;
+  padding: 10px 10px 5px 50px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+}
+
+.waylist {
+  position: absolute;
+  top: $searchHeight;
+  left: 0;
+  right: 0;
+  bottom: $searchModeToggleHeight;
+  overflow: auto;
+  max-height: 100%;
+}
+
+.waylist-item {
+  background: rgba(0,0,0,0.4);
+  padding: $wayListItemHeight*0.40 $wayListItemHeight;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: $wayListItemHeight;
+}
+.waylist-item + .waylist-item {
+  border-top: 2px solid black;
+}
+.waylist-item .way {
+  position: absolute;
+  left: $wayListItemHeight*0.15; 
+  top: $wayListItemHeight*0.15;
+}
+.way-place {
+  font-size: 40px;
+  line-height: $wayListItemHeight*0.2;
+}
+.way-distance{
+  font-size: 16px;
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+.angular-google-map-container { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: $searchModeToggleHeight;
+}
+
+#showmap {
+  background: black no-repeat url(../images/map-icon.png) center center; 
+}
+#showwaylist {
+  background: black no-repeat url(../images/list-icon.png) center center; 
+}

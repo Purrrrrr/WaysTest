@@ -1,55 +1,59 @@
 body {
-  background: black url(../images/city.png) fixed center top; 
+  background: black url(../images/city.jpg) fixed center top;
   /* background: black url(../images/listtest.png) fixed center top; */
   color: white;
   overflow: hidden;
   font-family: sans-serif;
-  font-variant: small-caps;
-}
+  font-variant: small-caps; }
+
 html, body {
   height: 100%;
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 #splashcontainer {
   margin: 0 auto;
   width: 441px;
   max-width: 80%;
   position: relative;
-  height: 100%;
-}
-#splashlogo{
+  height: 100%; }
+
+#splashlogo {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   margin: auto;
-  max-width: 100%;
-}
+  max-width: 100%; }
 
 .container {
   position: relative;
   width: 100%;
-  height: 100%;
-}
+  height: 100%; }
 
 nav {
   position: relative;
   width: 100%;
-  height: 80px;
-  background: rgba(0,0,0,0.6) no-repeat center center url(../images/logo_for_menu.png);
-}
+  height: 55px;
+  background: rgba(0, 0, 0, 0.6); }
+
+#logo {
+  display: block;
+  height: 44px;
+  width: 44px;
+  position: relative;
+  margin: 0 auto;
+  top: 5.5px;
+  left: 0; }
 
 #app-area {
   position: absolute;
-  top: 80px;
+  top: 55px;
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 .app-view {
   /* background: black url(../images/city.png) fixed center top; */
@@ -58,125 +62,135 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: hidden;
-}
-.waysearch {
-  background: black;
-  height: 40px;
-  padding: 5px;
-}
-.waysearch input {
-  display: block;
-  background: #363636 no-repeat url(../images/search.png) 11px center;
-  font-size: 16px;
-  color: white;
-  height: 25px;
-  width: auto;
-  padding: 10px 10px 5px 50px;
-  border: none;
-}
-.waylist {
-  position: absolute;
-  top: 50px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: auto;
-  max-height: 100%;
-}
+  overflow: hidden; }
+
 .bottomTools {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  padding-bottom: 80px;
-}
+  bottom: 0; }
+
 .bottomTools > .tools {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 80px;
-  background: rgba(0,0,0,0.7);
+  height: 50px;
+  background: rgba(0, 0, 0, 0.7);
   text-align: center;
-  line-height: 80px;
-  font-size: 30px;
-}
+  line-height: 50px;
+  font-size: 30px; }
 
 .empty-view {
-  display: none;
-}
+  display: none; }
 
-.circle {
-  width: 50px;
-  height: 50px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  border-radius: 25px; 
-  border: 1px solid black;
-}
+.bar {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 25px 15px;
+  position: relative; }
 
-.angular-google-map-container { 
+.slide-out .bar {
+  margin: 0; }
+
+.way {
+  position: relative;
+  background: black;
+  width: 84px;
+  height: 84px;
+  -webkit-border-radius: 7%;
+  -moz-border-radius: 7%;
+  border-radius: 7%;
+  text-transform: uppercase;
+  text-align: center; }
+
+.way-name {
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  font-size: 12px; }
+
+.way-logo {
+  width: 100%;
+  position: absolute;
+  bottom: 30%;
+  left: 0;
+  font-size: 21px;
+  letter-spacing: -1.5px; }
+
+.ways-w {
+  color: #ec373a; }
+
+.ways-a {
+  color: #faae43; }
+
+.ways-y {
+  color: #219646; }
+
+.waysearch {
+  background: black;
+  height: 30px;
+  padding: 5px; }
+
+.waysearch input {
+  display: block;
+  background: #363636 no-repeat url(../images/search.png) 11px center;
+  font-size: 16px;
+  color: white;
+  height: 30px;
+  width: 100%;
+  padding: 10px 10px 5px 50px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none; }
+
+.waylist {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  overflow: auto;
+  max-height: 100%; }
+
+.waylist-item {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 48px 120px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 120px; }
+
+.waylist-item + .waylist-item {
+  border-top: 2px solid black; }
+
+.waylist-item .way {
+  position: absolute;
+  left: 18px;
+  top: 18px; }
+
+.way-place {
+  font-size: 40px;
+  line-height: 24px; }
+
+.way-distance {
+  font-size: 16px;
+  position: absolute;
+  bottom: 12px;
+  right: 12px; }
+
+.angular-google-map-container {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 80px;
-}
+  bottom: 50px; }
 
-.bar {
-  background: rgba(0,0,0,0.4);
-  padding: 25px 15px;
-  position: relative;
-}
-.bar + .bar {
-  border-top: 3px solid black;
-}
-.slide-out .bar {
-  margin: 0;
-}
+#showmap {
+  background: black no-repeat url(../images/map-icon.png) center center; }
 
-.way {
-  background: black;
-  width: 90px;
-  height: 30px;
-  padding: 30px 0;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px; 
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.way-name {
-  font-size: 12px;
-}
-.way-logo {
-  font-size: 21px;
-  letter-spacing: -1.5px;
-}
-.ways-w {
-  color: #ec373a;
-}
-.ways-a {
-  color: #faae43;
-}
-.ways-y {
-  color: #219646;
-}
-.bar .way {
-  display: inline-block;
-}
-.way-place {
-  display: inline-block;
-  font-size: 40px;
-  line-height: 80px;
-  margin-left: 20px;
-}
-.way-distance{
-  font-size: 16px;
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-}
+#showwaylist {
+  background: black no-repeat url(../images/list-icon.png) center center; }

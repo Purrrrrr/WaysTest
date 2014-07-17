@@ -1,15 +1,14 @@
 <div class="bottomTools">
   <div class="waysearch">
-    <input type="text" ng-model="search" placeholder="Search WAYs" />
+    <input type="text" ng-model="search" placeholder="Search WAYS" />
   </div>
   <div class="waylist">
-    <div ng-repeat="way in ways" ng-click="navigateTo('ways.details')" class="bar">
+    <div ng-repeat="way in ways" ng-click="navigateTo('ways.details')" class="waylist-item">
       <way name="way.name"></way>
       <div class="way-place">{{way.place}}</div>
       <div class="way-distance">{{way.distance}} m</div>
     </div>
   </div>
-  <div ng-click="navigateTo('ways.map')" class="tools">
-    Kartta
+  <div id="showmap" ng-click="navigateTo('ways.map')" class="tools">
   </div>
 </div>

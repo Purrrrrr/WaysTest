@@ -2,7 +2,6 @@
   <google-map draggable="true" grayscale center="map.center" zoom="map.zoom">
     <marker ng-repeat="way in wayMarkers" click="gotoWay(way)" icon="'images/way-icon.png'" coords="way.position"></marker>
   </google-map>
-  <div ng-click="navigateTo('ways.list')" class="tools">
-    Lista
+  <div id="showwaylist" ng-click="navigateTo('ways.list')" class="tools">
   </div>
 </div>

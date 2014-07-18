@@ -9,7 +9,6 @@ body {
   color: white;
   overflow: hidden;
   font-family: sans-serif;
-  font-variant: small-caps;
 }
 html, body {
   height: 100%;
@@ -105,5 +104,7 @@ nav {
   margin: 0;
 }
 
+@import "icons";
 @import "waybox";
 @import "listviews";
+@import "detailview";

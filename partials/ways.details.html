@@ -1,12 +1,38 @@
-<h1>Friends way</h1>
-<p style="cursor: pointer;" ng-click="showDetails = !showDetails">
-Invite a friend! Click to toggle more details:
-</p>
-<div ng-show="showDetails" class="animated slide-out">
-  <div class="bar nomargin">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+<section class="placeDetails" ng-click="showPlaceDetails = !showPlaceDetails">
+  <h1>{{way.place}}</h1>
+  <p class="placeDetails">{{way.placeDetails}}</p>
+</section>
+<section ng-show="showPlaceDetails" class="morePlaceDetails animated expanding">
+  <div class="arrow"></div>
+  <div class="animated contents">
+    ...
   </div>
-</div>
-<div class="bar">Stuff goes here</div>
-<div ng-click="goBack();" class="bar">Click here to go back</div>
-<div ng-swipe-left="goBack();"></div>
+</section>
+<section class="wayDetails" ng-click="showWayDetails = !showWayDetails">
+<way name="way.name" size="large"></way>
+<p class="wayDescription">
+{{way.description}}
+</p>
+<p class="wayTime">
+{{way.endTime}} remaining.
+</p>
+</section>
+<section ng-show="showWayDetails" class="moreWayDetails expanding">
+  <div class="arrow"></div>
+  <div class="animated contents">
+    {{way.details}}
+  </div>
+</section>
+<section class="share">
+  <p>share in</p>
+  <div class="share-fb"></div>
+  <div class="share-twitter"></div>
+  <div class="share-email"></div>
+</section>
+<section class="map">
+  <google-map pan="true" draggable="true" grayscale center="mapCenter" zoom="15">
+    <marker icon="'images/way-icon.png'" coords="way.position"></marker>
+  </google-map>
+</section>
+
+

@@ -24,5 +24,6 @@ theWaysApp.controller('MapController', function($scope, $state, WaysService) {
 theWaysApp.controller('WayController', function($scope, $state, WaysService) {
   WaysService.getWays({}, "", function(ways) {
     $scope.way = ways[0];
+    $scope.mapCenter = _.clone($scope.way.position);
   });
 });

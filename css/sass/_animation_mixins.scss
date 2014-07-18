@@ -1,0 +1,38 @@
+@mixin transform ($value) {
+  transform: $value;
+  -ms-transform: $value;
+  -webkit-transform: $value;
+}
+@mixin transition-duration($value) {
+  transition-duration: $value;
+  -webkit-transition-duration: $value;
+}
+@mixin shown-state() {
+  &.ng-enter.ng-enter-active {
+    @content;
+  }
+  &.ng-leave {
+    @content;
+  }
+
+  &.ng-hide-add {
+    @content;
+  } 
+  &.ng-hide-remove.ng-hide-remove-active {
+    @content;
+  }
+}
+@mixin hidden-state() {
+  &.ng-leave.ng-leave-active {
+    @content;
+  }
+  &.ng-enter {
+    @content;
+  }
+  &.ng-hide-add.ng-hide-add-active {
+    @content;
+  }
+  &.ng-hide-remove {
+    @content;
+  }
+}

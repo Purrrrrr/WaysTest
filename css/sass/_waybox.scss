@@ -9,6 +9,14 @@
   border-radius: 7%; 
   text-transform: uppercase;
   text-align: center;
+  font-size: 21px;
+  font-variant: small-caps;
+}
+.way.large {
+  $size: $wayListItemHeight*1;
+  width: $size;
+  height: $size;
+  font-size: 31px;
 }
 
 .way-name {
@@ -16,14 +24,14 @@
   position: absolute;
   top: 30%;
   left: 0;
-  font-size: 12px;
+  font-size: 58%;
+  opacity: 0.9;
 }
 .way-logo {
   width: 100%;
   position: absolute;
-  bottom: 30%;
+  bottom: 25%;
   left: 0;
-  font-size: 21px;
   letter-spacing: -1.5px;
 }
 .ways-w {

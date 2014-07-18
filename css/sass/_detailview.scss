@@ -1,0 +1,108 @@
+#way-view {
+  background: rgba(0,0,0,0.4);
+  overflow: auto;
+}
+#way-view section {
+  text-align: center;
+  padding: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px 0;
+  font-size: 14px;
+}
+#way-view section + section {
+  border-top: 2px solid black;
+}
+#way-view p {
+  opacity: 0.9;
+}
+$totalWayViewHeight: 600px;
+
+#way-view .placeDetails {
+  height: $totalWayViewHeight*0.15;
+}
+#way-view h1 {
+  font-variant: small-caps;
+  font-size: 40px;
+  font-weight: normal;
+  margin: 0;
+}
+#way-view .placeDetails  {
+  margin: 2px 0;
+}
+#way-view .way {
+  margin: 0 auto;
+}
+#way-view .wayDetails {
+  height: $totalWayViewHeight*0.40;
+}
+#way-view .wayDetails p {
+  margin: 10px 0;
+}
+#way-view .wayDescription {
+  text-transform: uppercase;
+}
+#way-view .share{
+  height: $totalWayViewHeight*0.15;
+}
+#way-view .share p {
+  margin: -10px 0 6px 0;
+}
+#way-view .share div {
+  margin: 0 2px;
+}
+#way-view .map {
+  padding: 0;
+}
+#way-view .angular-google-map-container { 
+  height: $totalWayViewHeight*0.30;
+}
+
+@import "animation_mixins";
+#way-view section.expanding {
+  $height: $totalWayViewHeight*0.25;
+  padding: 0;
+
+  @include transition-duration(400ms);
+  .contents {
+    @include transition-duration(400ms);
+    height: $height;
+    background: black;
+  }
+
+  @include hidden-state {
+    opacity: 0;
+    .contents {
+      max-height: 0;
+      overflow: hidden;
+    }
+  }
+  @include shown-state {
+    opacity: 1;
+    .contents {
+      max-height: $height;
+      overflow: hidden;
+    }
+  }
+  &.ng-hide {
+    display: block !important; 
+    height: 0;
+    .contents {
+      height: 0;
+      overflow: hidden;
+    }
+    @include transition-duration(0ms);
+  }
+  &.ng-hide-add-active,
+  &.ng-hide-remove-active {
+    height: $height;
+  }
+  &.ng-animate {
+    @include transition-duration(400ms);
+  }
+}
+#way-view section + section.expanding {
+  border-top: none;
+}
+

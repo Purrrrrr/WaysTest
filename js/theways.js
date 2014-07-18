@@ -41,6 +41,7 @@ theWaysApp.config(function($stateProvider, $urlRouterProvider) {
     data: {position: "right"},
     views: {
       "details": {
+        controller: 'WayController',
         templateUrl: "partials/ways.details.html",
       }
     }

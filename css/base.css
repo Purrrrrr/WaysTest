@@ -289,6 +289,9 @@ nav {
     -webkit-transition-duration: 400ms;
     height: 150px;
     background: black; }
+    #way-view section.expanding .contents p {
+      padding: 15px;
+      margin: 0; }
   #way-view section.expanding.ng-leave.ng-leave-active {
     opacity: 0; }
     #way-view section.expanding.ng-leave.ng-leave-active .contents {

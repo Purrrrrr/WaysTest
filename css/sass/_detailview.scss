@@ -69,6 +69,11 @@ $totalWayViewHeight: 600px;
     @include transition-duration(400ms);
     height: $height;
     background: black;
+
+    p {
+      padding: 15px;
+      margin: 0;
+    }
   }
 
   @include hidden-state {

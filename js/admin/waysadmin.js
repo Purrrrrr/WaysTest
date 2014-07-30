@@ -7,11 +7,20 @@ adminApp.config(function($stateProvider, $urlRouterProvider) {
   .state('home', {
     url: "/home",
     templateUrl: "partials/admin/list.html",
-    controller: function($scope, MockWays) {
-      $scope.ways = MockWays.getWays();
+    controller: function($scope, ParseSDK, MockWays) {
+      ParseSDK.getWays(0,0,function(ways) {
+        $scope.ways = ways;
+        //$scope.$digest();
+        console.log(ways);
+      });
 
       $scope.generate = function() {
-        $scope.ways = MockWays.getWays();
+        var ways = MockWays.getWays();
+        console.log(ways);
+        ParseSDK.saveWays(ways, function() {
+          $scope.ways = ways;
+          console.log("ok");
+        });
         
       }
     }

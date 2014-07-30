@@ -1,5 +1,5 @@
 angular.module('ParseServices', [])
-.factory('ParseSDK', [function() {
+.factory('ParseSDK', ['$q', function($q) {
 
   Parse.initialize("sSbouZ9V8HOSQY755wkzfMSYE5zmqe1nBzUd7Npc", "DMcQVzpWOusZPNTuXzbMMTUKskvpzaFWLgSj7ump");
 
@@ -23,20 +23,45 @@ angular.module('ParseServices', [])
   var WayCollection = Parse.Collection.extend({
     model: Way
   });
+  var allWays = new WayCollection();
   
   return {
     getWays: function(position, search, successFunc, errFunc) {
+      var deferred = $q.defer();
+      var promise = deferred.promise;
+
       //The parameters are ignored for now
-      WayCollection.fetch(function(coll) {
-        console.log(coll);
-        successFunc(coll);
+      allWays.fetch({
+        success: function(coll) {
+          var objs = [];
+          angular.forEach(coll.models, function(row) {
+            var obj = _.clone(row.attributes);
+            obj.id = row.id;
+            objs.push(obj);
+          });
+          console.log(objs);
+          promise.then(function(objs) {
+            successFunc(objs)
+          });
+          deferred.resolve(objs);
+        }
       });
     },
     getWay: function(id) {
       //_.clone(model.attributes)
     },
-    saveWay: function(way, successFunc) {
-      Way.save(way, successFunc);
+    saveWay: function(data, successFunc) {
+      var way = new Way()
+      way.save(data, {success: successFunc});
+    },
+    saveWays: function(ways, successFunc) {
+      ////console.log(allWays);
+      //allWays.remove(allWays);
+      angular.forEach(ways, function(data) {
+        var way = new Way()
+        way.save(data, {});
+      });
+      //console.log(allWays);
     }
   }
 

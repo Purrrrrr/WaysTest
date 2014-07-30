@@ -1,4 +1,4 @@
-var theWaysApp = angular.module('theways', ['ngAnimate', 'ngTouch', 'ui.router', 'google-maps']);
+var theWaysApp = angular.module('theways', ['ngAnimate', 'ngTouch', 'ui.router', 'google-maps', 'ParseServices']);
 theWaysApp.config(function($stateProvider, $urlRouterProvider) {
   // For any unmatched url, redirect to /state1
   $urlRouterProvider.otherwise("/splash");

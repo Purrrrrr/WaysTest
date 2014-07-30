@@ -1,0 +1,12 @@
+<h1>Ways admin</h1>
+<button ng-click="generate()">Generate new ways</button>
+<div class="panel panel-default" ng-repeat="way in ways">
+  <dl class="dl-horizontal">
+    <dt ng-repeat-start="(key,val) in way">
+      {{key}}
+    </dt>
+    <dd ng-repeat-end>
+    {{val}}
+    </dd>
+  </dl>
+</div>

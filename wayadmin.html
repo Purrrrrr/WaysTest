@@ -4,34 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>The Ways Prototype</title>
-  <style type="text/css">code{white-space: pre;}</style>
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <link rel="icon" href="images/icon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" type="text/css" href="css/animations.css">  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 </head>
 <body ng-app="theways" ng-class="viewClasses" >
-  <div ui-view class="animated fading container">
+  <div ui-view class="container">
   </div>
   <script type="text/javascript" src="js/bower_components/angular/angular.js"></script>
-  <script type="text/javascript" src="js/bower_components/angular-touch/angular-touch.js"></script>
-  <script type="text/javascript" src="js/bower_components/angular-animate/angular-animate.js"></script>
   <script type="text/javascript" src="js/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>
   <script type="text/javascript" src="js/bower_components/lodash/dist/lodash.js"></script>
   <script type="text/javascript" src="js/bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
   <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
   <script type="text/javascript" src="js/parse.js"></script>
-  <script type="text/javascript" src="js/theways.js"></script>
-  <script type="text/javascript" src="js/directives.js"></script>
-  <script type="text/javascript" src="js/services.js"></script>
-  <script type="text/javascript" src="js/controllers.js"></script>
+  <script type="text/javascript" src="js/admin/waysadmin.js"></script>
+  <script type="text/javascript" src="js/admin/services.js"></script>
+  <!-- 
+  <script type="text/javascript" src="js/admin/directives.js"></script> 
+  <script type="text/javascript" src="js/admin/controllers.js"></script>
+  -->
 </body>
 </html>
 

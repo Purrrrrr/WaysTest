@@ -1,36 +1,11 @@
-$topNavHeight: 55px;
 $searchHeight: 40px;
 $searchModeToggleHeight: 50px;
 $wayListItemHeight: 120px;
 
-body {
-  background: black url(../images/city.jpg) fixed center top; 
-  /* background: black url(../images/listtest.png) fixed center top; */
-  color: white;
-  overflow: hidden;
-  font-family: sans-serif;
-}
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+@import "layout";
 
-#splashcontainer {
-  margin: 0 auto;
-  width: 441px;
-  max-width: 80%;
-  position: relative;
-  height: 100%;
-}
-#splashlogo{
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  max-width: 100%;
+#background {
+  background: black url(../images/city.jpg) fixed center top; 
 }
 
 .container {
@@ -39,37 +14,12 @@ html, body {
   height: 100%;
 }
 
-nav {
-  position: relative;
-  width: 100%;
-  height: $topNavHeight;
-  background: rgba(0,0,0,0.6);
-}
-#logo {
-  display: block;
-  height: $topNavHeight*0.8;
-  width: $topNavHeight*0.8;
-  position: relative;
-  margin: 0 auto;
-  top: $topNavHeight*0.1;
-  left: 0;
-}
-
-#app-area {
-  position: absolute;
-  top: $topNavHeight;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-}
 .app-view {
-  /* background: black url(../images/city.png) fixed center top; */
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
 }
 .bottomTools {
@@ -85,25 +35,13 @@ nav {
   right: 0;
   bottom: 0;
   height: $searchModeToggleHeight;
-  background: rgba(0,0,0,0.7);
-  text-align: center;
-  line-height: $searchModeToggleHeight;
-  font-size: 30px;
 }
 
 .empty-view {
   display: none;
 }
 
-.bar {
-  background: rgba(0,0,0,0.4);
-  padding: 25px 15px;
-  position: relative;
-}
-.slide-out .bar {
-  margin: 0;
-}
-
+@import "splash";
 @import "icons";
 @import "waybox";
 @import "listviews";

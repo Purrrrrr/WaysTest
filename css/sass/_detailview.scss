@@ -1,8 +1,8 @@
-#way-view {
+#waydetails {
   background: rgba(0,0,0,0.4);
   overflow: auto;
 }
-#way-view section {
+#waydetails section {
   text-align: center;
   padding: 1px;
   -webkit-box-sizing: border-box;
@@ -11,56 +11,56 @@
   padding: 20px 0;
   font-size: 14px;
 }
-#way-view section + section {
+#waydetails section + section {
   border-top: 2px solid black;
 }
-#way-view p {
+#waydetails p {
   opacity: 0.9;
 }
 $totalWayViewHeight: 600px;
 
-#way-view .placeDetails {
+#waydetails .placeDetails {
   height: $totalWayViewHeight*0.15;
 }
-#way-view h1 {
+#waydetails h1 {
   font-variant: small-caps;
   font-size: 40px;
   font-weight: normal;
   margin: 0;
 }
-#way-view .placeDetails  {
+#waydetails .placeDetails  {
   margin: 2px 0;
 }
-#way-view .way {
+#waydetails .way {
   margin: 0 auto;
 }
-#way-view .wayDetails {
+#waydetails .wayDetails {
   height: $totalWayViewHeight*0.40;
 }
-#way-view .wayDetails p {
+#waydetails .wayDetails p {
   margin: 10px 0;
 }
-#way-view .wayDescription {
+#waydetails .wayDescription {
   text-transform: uppercase;
 }
-#way-view .share{
+#waydetails .share{
   height: $totalWayViewHeight*0.15;
 }
-#way-view .share p {
+#waydetails .share p {
   margin: -10px 0 6px 0;
 }
-#way-view .share div {
+#waydetails .share div {
   margin: 0 2px;
 }
-#way-view .map {
+#waydetails .map {
   padding: 0;
 }
-#way-view .angular-google-map-container { 
+#waydetails .angular-google-map-container { 
   height: $totalWayViewHeight*0.30;
 }
 
 @import "animation_mixins";
-#way-view section.expanding {
+#waydetails section.expanding {
   $height: $totalWayViewHeight*0.25;
   padding: 0;
 
@@ -107,7 +107,6 @@ $totalWayViewHeight: 600px;
     @include transition-duration(400ms);
   }
 }
-#way-view section + section.expanding {
+#waydetails section + section.expanding {
   border-top: none;
 }
-

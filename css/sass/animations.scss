@@ -14,6 +14,45 @@
   transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+/* Layout animations */
+#waymap, #waylist, #waybrowser, #waydetails {
+  @include transition-duration(400ms);
+}
+.position-top {
+  #waymap {
+    @include transform(translateY(0));
+  }
+  #waylist {
+    @include transform(translateY(100%));
+  }
+}
+.position-bottom {
+  #waymap {
+    @include transform(translateY(-100%));
+  }
+  #waylist {
+    @include transform(translateY(0));
+  }
+}
+/* Handle the details view sidescroll */
+#waybrowser {
+  //@include transform(translateX(0));
+  opacity: 1;
+}
+.show-details {
+  #waybrowser {
+    //@include transform(translateX(-100%));
+    opacity: 0;
+  }
+}
+#waydetails {
+  @include hidden-state {
+    @include transform(translateX(100%));
+  }
+  @include shown-state {
+    @include transform(translateX(0));
+  }
+}
 
 .fading {
   @include transition-duration(400ms);
@@ -22,65 +61,5 @@
   }
   @include shown-state {
     opacity: 1;
-  }
-}
-
-.slide-from-right{
-  @include transition-duration(400ms);
-  @include shown-state {
-    @include transform(translateX(0));
-  }
-  @include hidden-state {
-    @include transform(translateX(100%));
-  }
-}
-
-.sidesliding {
-  @include transition-duration(400ms);
-  .from-top.to-bottom & {
-    &.ng-enter {
-      @include transform(translateY(100%));
-    }
-    &.ng-enter-active {
-      @include transform(translateY(0));
-    }
-    &.ng-leave {
-      @include transform(translateY(0));
-    }
-    &.ng-leave-active {
-      @include transform(translateY(-100%));
-    }
-  }
-  .from-bottom.to-top & {
-    &.ng-enter {
-      @include transform(translateY(-100%));
-    }
-    &.ng-enter-active {
-      @include transform(translateY(0));
-    }
-    &.ng-leave {
-      @include transform(translateY(0));
-    }
-    &.ng-leave-active {
-      @include transform(translateY(100%));
-    }
-  }
-  .to-right & {
-    @include transition-duration(100ms);
-    @include hidden-state {
-      opacity: 0;
-    }
-    @include shown-state {
-      opacity: 1;
-    }
-  }
-  .from-right & {
-    @include transition-duration(800ms);
-    @include hidden-state {
-      opacity: 0;
-    }
-    @include shown-state {
-      opacity: 1;
-    }
   }
 }

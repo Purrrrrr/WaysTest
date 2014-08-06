@@ -39,7 +39,7 @@ angular.module('ParseServices', [])
             obj.id = row.id;
             objs.push(obj);
           });
-          console.log(objs);
+          //console.log(objs);
           promise.then(function(objs) {
             successFunc(objs)
           });

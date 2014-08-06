@@ -1,6 +1,6 @@
 theWaysApp.controller('WayListController', function($scope, $state, WaysService) {
   $scope.gotoWay = function(way) {
-    $state.go('ways.details');
+    $state.go('ways.list.way', {wayId: way.id});
   };
   WaysService.getWays({}, "", function(ways) {
     $scope.ways = ways;
@@ -15,15 +15,18 @@ theWaysApp.controller('MapController', function($scope, $state, WaysService) {
     zoom: 16,
   };
   $scope.gotoWay = function(way) {
-    $state.go('ways.details');
+    $state.go('ways.map.way', {wayId: way.id});
   };
   WaysService.getWays({}, "", function(ways) {
     $scope.wayMarkers = ways;
   });
 });
 theWaysApp.controller('WayController', function($scope, $state, WaysService) {
+  console.log($state.params);
+
   WaysService.getWays({}, "", function(ways) {
     $scope.way = ways[0];
     $scope.mapCenter = _.clone($scope.way.position);
+    console.log($scope.mapCenter);
   });
 });

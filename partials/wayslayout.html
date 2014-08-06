@@ -1,0 +1,28 @@
+<!-- A container for the list and map -->
+<div id="waybrowser" class="app-view">
+  <!-- Map -->
+  <div id="waymap" ng-controller="MapController" class="animated bottomTools">
+    <google-map draggable="true" grayscale center="map.center" zoom="map.zoom">
+      <marker ng-repeat="way in wayMarkers" click="gotoWay(way)" icon="'images/way-icon.png'" coords="way.position"></marker>
+    </google-map>
+    <div id="showwaylist"  ui-sref="ways.list" class="tools">
+    </div>
+  </div>
+  <!-- Way list -->
+  <div id="waylist" ng-controller="WayListController" class="animated bottomTools">
+    <div class="waysearch">
+      <input type="text" ng-model="search" placeholder="Search WAYS" />
+    </div>
+    <div class="waylist">
+      <div ng-repeat="way in ways" ng-click="gotoWay(way)" class="waylist-item">
+        <way name="way.name"></way>
+        <div class="way-place">{{way.place}}</div>
+        <div class="way-distance">{{way.distance}} m</div>
+      </div>
+    </div>
+    <div id="showmap" ui-sref="ways.map" class="tools">
+    </div>
+  </div>
+</div>
+<!-- Details -->
+<div ng-swipe-right="goUp();" ui-view="details" id="waydetails" class="animated app-view"></div>

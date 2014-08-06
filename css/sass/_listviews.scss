@@ -55,7 +55,7 @@
   bottom: 12px;
   right: 12px;
 }
-#map-view .angular-google-map-container { 
+#waymap .angular-google-map-container { 
   position: absolute;
   top: 0;
   left: 0;
@@ -63,9 +63,16 @@
   bottom: $searchModeToggleHeight;
 }
 
+.tools {
+  height: $searchModeToggleHeight;
+  background: no-repeat rgba(0,0,0,0.7) center center;
+  text-align: center;
+  line-height: $searchModeToggleHeight;
+  font-size: 30px;
+}
 #showmap {
-  background: black no-repeat url(../images/map-icon.png) center center; 
+  background-image: url(../images/map-icon.png); 
 }
 #showwaylist {
-  background: black no-repeat url(../images/list-icon.png) center center; 
+  background-image: url(../images/list-icon.png); 
 }

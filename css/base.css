@@ -1,66 +1,88 @@
-body {
-  background: black url(../images/city.jpg) fixed center top;
-  /* background: black url(../images/listtest.png) fixed center top; */
-  color: white;
-  overflow: hidden;
-  font-family: sans-serif; }
-
 html, body {
   height: 100%;
   margin: 0;
   padding: 0; }
 
-#splashcontainer {
-  margin: 0 auto;
-  width: 441px;
-  max-width: 80%;
-  position: relative;
-  height: 100%; }
+body {
+  background: black;
+  color: white;
+  overflow: hidden;
+  font-family: sans-serif; }
 
-#splashlogo {
+#background {
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  max-width: 100%; }
-
-.container {
-  position: relative;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  z-index: 1; }
+
+#app {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 2; }
 
 nav {
+  display: table-row;
   position: relative;
   width: 100%;
   height: 55px;
   background: rgba(0, 0, 0, 0.6); }
 
 #logo {
-  display: block;
-  height: 44px;
-  width: 44px;
+  display: table-cell;
+  height: 80%;
   position: relative;
   margin: 0 auto;
   top: 5.5px;
   left: 0; }
 
-#app-area {
-  position: absolute;
-  top: 55px;
-  left: 0;
-  right: 0;
-  bottom: 0;
+#contents {
+  display: table-row;
+  height: 100%;
+  overflow: hidden;
+  position: relative; }
+
+#mainview {
+  width: 100%;
+  height: 80%;
+  display: table-cell;
+  position: relative;
   overflow: hidden; }
 
+/*
+.rowContainer {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  height: 100%;
+}
+.row {
+  display: table-row;
+  position: relative;
+  width: 100%;
+}
+.row.expand {
+  height: 100%;
+} */
+#background {
+  background: black url(../images/city.jpg) fixed center top; }
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+
 .app-view {
-  /* background: black url(../images/city.png) fixed center top; */
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  height: 100%;
+  width: 100%;
   overflow: hidden; }
 
 .bottomTools {
@@ -75,22 +97,19 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 50px;
-  background: rgba(0, 0, 0, 0.7);
-  text-align: center;
-  line-height: 50px;
-  font-size: 30px; }
+  height: 50px; }
 
 .empty-view {
   display: none; }
 
-.bar {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 25px 15px;
-  position: relative; }
-
-.slide-out .bar {
-  margin: 0; }
+#splash {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  height: 80%;
+  width: 80%;
+  background: url(../images/splash_screen_logo.png) no-repeat center center;
+  background-size: contain; }
 
 .arrow-up, .arrow-down {
   width: 32px;
@@ -209,24 +228,31 @@ nav {
   bottom: 12px;
   right: 12px; }
 
-#map-view .angular-google-map-container {
+#waymap .angular-google-map-container {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 50px; }
 
+.tools {
+  height: 50px;
+  background: no-repeat rgba(0, 0, 0, 0.7) center center;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px; }
+
 #showmap {
-  background: black no-repeat url(../images/map-icon.png) center center; }
+  background-image: url(../images/map-icon.png); }
 
 #showwaylist {
-  background: black no-repeat url(../images/list-icon.png) center center; }
+  background-image: url(../images/list-icon.png); }
 
-#way-view {
+#waydetails {
   background: rgba(0, 0, 0, 0.4);
   overflow: auto; }
 
-#way-view section {
+#waydetails section {
   text-align: center;
   padding: 1px;
   -webkit-box-sizing: border-box;
@@ -235,116 +261,116 @@ nav {
   padding: 20px 0;
   font-size: 14px; }
 
-#way-view section + section {
+#waydetails section + section {
   border-top: 2px solid black; }
 
-#way-view p {
+#waydetails p {
   opacity: 0.9; }
 
-#way-view .placeDetails {
+#waydetails .placeDetails {
   height: 90px; }
 
-#way-view h1 {
+#waydetails h1 {
   font-variant: small-caps;
   font-size: 40px;
   font-weight: normal;
   margin: 0; }
 
-#way-view .placeDetails {
+#waydetails .placeDetails {
   margin: 2px 0; }
 
-#way-view .way {
+#waydetails .way {
   margin: 0 auto; }
 
-#way-view .wayDetails {
+#waydetails .wayDetails {
   height: 240px; }
 
-#way-view .wayDetails p {
+#waydetails .wayDetails p {
   margin: 10px 0; }
 
-#way-view .wayDescription {
+#waydetails .wayDescription {
   text-transform: uppercase; }
 
-#way-view .share {
+#waydetails .share {
   height: 90px; }
 
-#way-view .share p {
+#waydetails .share p {
   margin: -10px 0 6px 0; }
 
-#way-view .share div {
+#waydetails .share div {
   margin: 0 2px; }
 
-#way-view .map {
+#waydetails .map {
   padding: 0; }
 
-#way-view .angular-google-map-container {
+#waydetails .angular-google-map-container {
   height: 180px; }
 
-#way-view section.expanding {
+#waydetails section.expanding {
   padding: 0;
   transition-duration: 400ms;
   -webkit-transition-duration: 400ms; }
-  #way-view section.expanding .contents {
+  #waydetails section.expanding .contents {
     transition-duration: 400ms;
     -webkit-transition-duration: 400ms;
     height: 150px;
     background: black; }
-    #way-view section.expanding .contents p {
+    #waydetails section.expanding .contents p {
       padding: 15px;
       margin: 0; }
-  #way-view section.expanding.ng-leave.ng-leave-active {
+  #waydetails section.expanding.ng-leave.ng-leave-active {
     opacity: 0; }
-    #way-view section.expanding.ng-leave.ng-leave-active .contents {
+    #waydetails section.expanding.ng-leave.ng-leave-active .contents {
       max-height: 0;
       overflow: hidden; }
-  #way-view section.expanding.ng-enter {
+  #waydetails section.expanding.ng-enter {
     opacity: 0; }
-    #way-view section.expanding.ng-enter .contents {
+    #waydetails section.expanding.ng-enter .contents {
       max-height: 0;
       overflow: hidden; }
-  #way-view section.expanding.ng-hide-add.ng-hide-add-active {
+  #waydetails section.expanding.ng-hide-add.ng-hide-add-active {
     opacity: 0; }
-    #way-view section.expanding.ng-hide-add.ng-hide-add-active .contents {
+    #waydetails section.expanding.ng-hide-add.ng-hide-add-active .contents {
       max-height: 0;
       overflow: hidden; }
-  #way-view section.expanding.ng-hide-remove {
+  #waydetails section.expanding.ng-hide-remove {
     opacity: 0; }
-    #way-view section.expanding.ng-hide-remove .contents {
+    #waydetails section.expanding.ng-hide-remove .contents {
       max-height: 0;
       overflow: hidden; }
-  #way-view section.expanding.ng-enter.ng-enter-active {
+  #waydetails section.expanding.ng-enter.ng-enter-active {
     opacity: 1; }
-    #way-view section.expanding.ng-enter.ng-enter-active .contents {
+    #waydetails section.expanding.ng-enter.ng-enter-active .contents {
       max-height: 150px;
       overflow: hidden; }
-  #way-view section.expanding.ng-leave {
+  #waydetails section.expanding.ng-leave {
     opacity: 1; }
-    #way-view section.expanding.ng-leave .contents {
+    #waydetails section.expanding.ng-leave .contents {
       max-height: 150px;
       overflow: hidden; }
-  #way-view section.expanding.ng-hide-add {
+  #waydetails section.expanding.ng-hide-add {
     opacity: 1; }
-    #way-view section.expanding.ng-hide-add .contents {
+    #waydetails section.expanding.ng-hide-add .contents {
       max-height: 150px;
       overflow: hidden; }
-  #way-view section.expanding.ng-hide-remove.ng-hide-remove-active {
+  #waydetails section.expanding.ng-hide-remove.ng-hide-remove-active {
     opacity: 1; }
-    #way-view section.expanding.ng-hide-remove.ng-hide-remove-active .contents {
+    #waydetails section.expanding.ng-hide-remove.ng-hide-remove-active .contents {
       max-height: 150px;
       overflow: hidden; }
-  #way-view section.expanding.ng-hide {
+  #waydetails section.expanding.ng-hide {
     display: block !important;
     height: 0;
     transition-duration: 0ms;
     -webkit-transition-duration: 0ms; }
-    #way-view section.expanding.ng-hide .contents {
+    #waydetails section.expanding.ng-hide .contents {
       height: 0;
       overflow: hidden; }
-  #way-view section.expanding.ng-hide-add-active, #way-view section.expanding.ng-hide-remove-active {
+  #waydetails section.expanding.ng-hide-add-active, #waydetails section.expanding.ng-hide-remove-active {
     height: 150px; }
-  #way-view section.expanding.ng-animate {
+  #waydetails section.expanding.ng-animate {
     transition-duration: 400ms;
     -webkit-transition-duration: 400ms; }
 
-#way-view section + section.expanding {
+#waydetails section + section.expanding {
   border-top: none; }

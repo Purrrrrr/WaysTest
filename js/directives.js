@@ -27,7 +27,9 @@ theWaysApp.directive('grayscale', function() {
       restrict: 'A', 
       priority: 1000,
       link: function postLink(originalScope, iElement, iAttrs, mapController) {
-          mapController.getMap().setOptions(grayScaleOptions);
+        var map = mapController.getMap();
+        if (!map) return;
+        map.setOptions(grayScaleOptions);
       }
     };
   })([

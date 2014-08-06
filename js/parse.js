@@ -24,26 +24,38 @@ angular.module('ParseServices', [])
     model: Way
   });
   var allWays = new WayCollection();
+
+  function parseModelToPDO(model) {
+    var obj = _.clone(model.attributes);
+    obj.id = model.id;
+    return obj;
+  }
   
   return {
     getWays: function(position, search, successFunc, errFunc) {
       //The parameters are ignored for now
       allWays.fetch({
         success: function(coll) {
-          var objs = [];
-          angular.forEach(coll.models, function(row) {
-            var obj = _.clone(row.attributes);
-            obj.id = row.id;
-            objs.push(obj);
-          });
-          //console.log(objs);
+          var objs = _.map(coll.models, parseModelToPDO);
           successFunc(objs)
           $rootScope.$apply();
+        },
+        error: function(object, error) {
+          errFunc(error);
         }
       });
     },
-    getWay: function(id) {
-      //_.clone(model.attributes)
+    getWay: function(id, successFunc, errFunc) {
+      var query = new Parse.Query(Way);
+      query.get(id, {
+        success: function(way) {
+          successFunc(parseModelToPDO(way));
+          $rootScope.$apply();
+        },
+        error: function(object, error) {
+          errFunc(error);
+        }
+      });
     },
     saveWay: function(data, successFunc) {
       var way = new Way()

@@ -1,5 +1,5 @@
 angular.module('ParseServices', [])
-.factory('ParseSDK', ['$q', function($q) {
+.factory('ParseSDK', ['$rootScope', function($rootScope) {
 
   Parse.initialize("sSbouZ9V8HOSQY755wkzfMSYE5zmqe1nBzUd7Npc", "DMcQVzpWOusZPNTuXzbMMTUKskvpzaFWLgSj7ump");
 
@@ -27,9 +27,6 @@ angular.module('ParseServices', [])
   
   return {
     getWays: function(position, search, successFunc, errFunc) {
-      var deferred = $q.defer();
-      var promise = deferred.promise;
-
       //The parameters are ignored for now
       allWays.fetch({
         success: function(coll) {
@@ -40,10 +37,8 @@ angular.module('ParseServices', [])
             objs.push(obj);
           });
           //console.log(objs);
-          promise.then(function(objs) {
-            successFunc(objs)
-          });
-          deferred.resolve(objs);
+          successFunc(objs)
+          $rootScope.$apply();
         }
       });
     },

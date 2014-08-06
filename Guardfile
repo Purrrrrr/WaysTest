@@ -3,4 +3,5 @@ guard 'livereload' do
   watch(%r{css/.+\.(css)})
   watch(%r{js/.+\.(js)})
   watch(%r{partials/.+\.(html)})
+  watch(%r{.+\.(html)})
 end

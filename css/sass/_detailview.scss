@@ -78,19 +78,19 @@ $totalWayViewHeight: 600px;
 
   @include hidden-state {
     opacity: 0;
-    .contents {
+    /* .contents {
       max-height: 0;
       overflow: hidden;
-    }
+    } */
   }
   @include shown-state {
     opacity: 1;
-    .contents {
+    /* .contents {
       max-height: $height;
       overflow: hidden;
-    }
+    } */
   }
-  &.ng-hide {
+  /* &.ng-hide {
     display: block !important; 
     height: 0;
     .contents {
@@ -105,7 +105,7 @@ $totalWayViewHeight: 600px;
   }
   &.ng-animate {
     @include transition-duration(400ms);
-  }
+  } */
 }
 #waydetails section + section.expanding {
   border-top: none;

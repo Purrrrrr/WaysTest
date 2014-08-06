@@ -1,5 +1,6 @@
 theWaysApp.service('WaysService', function(ParseSDK) {
-  
+  // TODO: Some caching system could be nice  
+ 
   this.getWays = function(position, search, successFunc) {
     ParseSDK.getWays(position, search, successFunc, function() {});
   }

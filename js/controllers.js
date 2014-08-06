@@ -22,12 +22,8 @@ theWaysApp.controller('MapController', function($scope, $state, WaysService) {
   });
 });
 theWaysApp.controller('WayController', function($scope, $state, WaysService) {
-  //console.log($state.params);
-  console.log(WaysService);
-
   WaysService.getWay($state.params.wayId, function(way) {
     $scope.way = way;
     $scope.mapCenter = _.clone(way.position);
-    console.log($scope.mapCenter);
   });
 });

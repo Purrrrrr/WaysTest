@@ -4,7 +4,6 @@
 }
 #waydetails section {
   text-align: center;
-  padding: 1px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -17,10 +16,8 @@
 #waydetails p {
   opacity: 0.9;
 }
-$totalWayViewHeight: 600px;
-
 #waydetails .placeDetails {
-  height: $totalWayViewHeight*0.15;
+  height: 15%;
 }
 #waydetails h1 {
   font-variant: small-caps;
@@ -35,7 +32,7 @@ $totalWayViewHeight: 600px;
   margin: 0 auto;
 }
 #waydetails .wayDetails {
-  height: $totalWayViewHeight*0.40;
+  height: 40%;
 }
 #waydetails .wayDetails p {
   margin: 10px 0;
@@ -44,7 +41,7 @@ $totalWayViewHeight: 600px;
   text-transform: uppercase;
 }
 #waydetails .share{
-  height: $totalWayViewHeight*0.15;
+  height: 14%;
 }
 #waydetails .share p {
   margin: -10px 0 6px 0;
@@ -54,20 +51,25 @@ $totalWayViewHeight: 600px;
 }
 #waydetails .map {
   padding: 0;
+  position: relative;
+  height: 30%;
 }
 #waydetails .angular-google-map-container { 
-  height: $totalWayViewHeight*0.30;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 @import "animation_mixins";
 #waydetails section.expanding {
-  $height: $totalWayViewHeight*0.25;
+  height: 25%;
   padding: 0;
 
   @include transition-duration(400ms);
   .contents {
-    @include transition-duration(400ms);
-    height: $height;
+    height: 100%;
     background: black;
 
     p {
@@ -78,34 +80,10 @@ $totalWayViewHeight: 600px;
 
   @include hidden-state {
     opacity: 0;
-    /* .contents {
-      max-height: 0;
-      overflow: hidden;
-    } */
   }
   @include shown-state {
     opacity: 1;
-    /* .contents {
-      max-height: $height;
-      overflow: hidden;
-    } */
   }
-  /* &.ng-hide {
-    display: block !important; 
-    height: 0;
-    .contents {
-      height: 0;
-      overflow: hidden;
-    }
-    @include transition-duration(0ms);
-  }
-  &.ng-hide-add-active,
-  &.ng-hide-remove-active {
-    height: $height;
-  }
-  &.ng-animate {
-    @include transition-duration(400ms);
-  } */
 }
 #waydetails section + section.expanding {
   border-top: none;

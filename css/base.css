@@ -43,13 +43,13 @@ nav {
 #contents {
   display: table-row;
   height: 100%;
+  width: 100%;
   overflow: hidden;
   position: relative; }
 
 #mainview {
   width: 100%;
-  height: 80%;
-  display: table-cell;
+  height: 100%;
   position: relative;
   overflow: hidden; }
 
@@ -254,7 +254,6 @@ nav {
 
 #waydetails section {
   text-align: center;
-  padding: 1px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -268,7 +267,7 @@ nav {
   opacity: 0.9; }
 
 #waydetails .placeDetails {
-  height: 90px; }
+  height: 15%; }
 
 #waydetails h1 {
   font-variant: small-caps;
@@ -283,7 +282,7 @@ nav {
   margin: 0 auto; }
 
 #waydetails .wayDetails {
-  height: 240px; }
+  height: 40%; }
 
 #waydetails .wayDetails p {
   margin: 10px 0; }
@@ -292,7 +291,7 @@ nav {
   text-transform: uppercase; }
 
 #waydetails .share {
-  height: 90px; }
+  height: 14%; }
 
 #waydetails .share p {
   margin: -10px 0 6px 0; }
@@ -301,87 +300,44 @@ nav {
   margin: 0 2px; }
 
 #waydetails .map {
-  padding: 0; }
+  padding: 0;
+  position: relative;
+  height: 30%; }
 
 #waydetails .angular-google-map-container {
-  height: 180px; }
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
 
 #waydetails section.expanding {
+  height: 25%;
   padding: 0;
   transition-duration: 400ms;
-  -webkit-transition-duration: 400ms;
-  /* &.ng-hide {
-    display: block !important; 
-    height: 0;
-    .contents {
-      height: 0;
-      overflow: hidden;
-    }
-    @include transition-duration(0ms);
-  }
-  &.ng-hide-add-active,
-  &.ng-hide-remove-active {
-    height: $height;
-  }
-  &.ng-animate {
-    @include transition-duration(400ms);
-  } */ }
+  -webkit-transition-duration: 400ms; }
   #waydetails section.expanding .contents {
-    transition-duration: 400ms;
-    -webkit-transition-duration: 400ms;
-    height: 150px;
+    height: 100%;
     background: black; }
     #waydetails section.expanding .contents p {
       padding: 15px;
       margin: 0; }
   #waydetails section.expanding.ng-leave.ng-leave-active {
-    opacity: 0;
-    /* .contents {
-      max-height: 0;
-      overflow: hidden;
-    } */ }
+    opacity: 0; }
   #waydetails section.expanding.ng-enter {
-    opacity: 0;
-    /* .contents {
-      max-height: 0;
-      overflow: hidden;
-    } */ }
+    opacity: 0; }
   #waydetails section.expanding.ng-hide-add.ng-hide-add-active {
-    opacity: 0;
-    /* .contents {
-      max-height: 0;
-      overflow: hidden;
-    } */ }
+    opacity: 0; }
   #waydetails section.expanding.ng-hide-remove {
-    opacity: 0;
-    /* .contents {
-      max-height: 0;
-      overflow: hidden;
-    } */ }
+    opacity: 0; }
   #waydetails section.expanding.ng-enter.ng-enter-active {
-    opacity: 1;
-    /* .contents {
-      max-height: $height;
-      overflow: hidden;
-    } */ }
+    opacity: 1; }
   #waydetails section.expanding.ng-leave {
-    opacity: 1;
-    /* .contents {
-      max-height: $height;
-      overflow: hidden;
-    } */ }
+    opacity: 1; }
   #waydetails section.expanding.ng-hide-add {
-    opacity: 1;
-    /* .contents {
-      max-height: $height;
-      overflow: hidden;
-    } */ }
+    opacity: 1; }
   #waydetails section.expanding.ng-hide-remove.ng-hide-remove-active {
-    opacity: 1;
-    /* .contents {
-      max-height: $height;
-      overflow: hidden;
-    } */ }
+    opacity: 1; }
 
 #waydetails section + section.expanding {
   border-top: none; }

@@ -1,7 +1,7 @@
 guard 'livereload' do
-  watch(%r{images/.+\.(png|jpg)})
-  watch(%r{css/.+\.(css)})
-  watch(%r{js/.+\.(js)})
-  watch(%r{partials/.+\.(html)})
-  watch(%r{.+\.(html)})
+  watch(%r{www/images/.+\.(png|jpg)})
+  watch(%r{www/src/css/.+\.(css)})
+  watch(%r{www/src/js/.+\.(js)})
+  watch(%r{www/partials/.+\.(html)})
+  watch(%r{www/.+\.(html)})
 end

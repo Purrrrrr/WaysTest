@@ -10,7 +10,7 @@
       "lastModifiedDate": 1408124796212,
       "creationDate": 1408124795962
     },
-    "sourceDirectory": "",
+    "sourceDirectory": "www",
     "cordovaPluginsDirectory": "plugins",
     "startFile": "index.html",
     "projectFiles": {},

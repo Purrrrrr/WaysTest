@@ -1,532 +1,165 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+html, body { height: 100%; margin: 0; padding: 0; }
 
-body {
-  background: black;
-  color: white;
-  overflow: hidden;
-  font-family: sans-serif;
-}
+body { background: black; color: white; overflow: hidden; font-family: sans-serif; }
 
-#background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
+#background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
 
-#app {
-  position: relative;
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
+#app { position: relative; display: table; table-layout: fixed; width: 100%; height: 100%; z-index: 2; }
 
-nav {
-  display: table-row;
-  position: relative;
-  width: 100%;
-  height: 55px;
-  background: rgba(0, 0, 0, 0.6);
-}
+nav { display: table-row; position: relative; width: 100%; height: 55px; background: rgba(0, 0, 0, 0.6); }
 
-#logo {
-  display: table-cell;
-  height: 44px;
-  position: relative;
-  margin: 0 auto;
-  top: 5.5px;
-  left: 0;
-}
+#logo { display: table-cell; height: 44px; position: relative; margin: 0 auto; top: 5.5px; left: 0; }
 
-#contents {
-  display: table-row;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
+#contents { display: table-row; height: 100%; width: 100%; overflow: hidden; position: relative; }
 
-#mainview {
-  display: table-cell;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
+#mainview { display: table-cell; width: 100%; height: 100%; position: relative; overflow: hidden; }
 
 /*
-.rowContainer {
-  position: relative;
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  height: 100%;
+.rowContainer { position: relative; display: table; table-layout: fixed; width: 100%; height: 100%;
 }
-.row {
-  display: table-row;
-  position: relative;
-  width: 100%;
+.row { display: table-row; position: relative; width: 100%;
 }
-.row.expand {
-  height: 100%;
+.row.expand { height: 100%;
 } */
-#background {
-  background: black url(../images/city.jpg) fixed center top;
-}
+#background { background: black url(../images/city.jpg) fixed center top; }
 
-.container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
+.container { position: relative; width: 100%; height: 100%; }
 
-.app-view {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
+.app-view { position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; }
 
-.bottomTools {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
+.bottomTools { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
 
-.bottomTools > .tools {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 50px;
-}
+.bottomTools > .tools { position: absolute; left: 0; right: 0; bottom: 0; height: 50px; }
 
-.empty-view {
-  display: none;
-}
+.empty-view { display: none; }
 
-#splash {
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  height: 80%;
-  width: 80%;
-  background: url(../images/splash_screen_logo.png) no-repeat center center;
-  background-size: contain;
-}
+#splash { position: absolute; top: 10%; left: 10%; height: 80%; width: 80%; background: url(../images/splash_screen_logo.png) no-repeat center center; background-size: contain; }
 
-.arrow-up, .arrow-down {
-  width: 32px;
-  height: 32px;
-  background: url(../images/arrowset.png) no-repeat;
-}
+.arrow-up, .arrow-down { width: 32px; height: 32px; background: url(../images/arrowset.png) no-repeat; }
 
-.arrow-down {
-  background-position: 0 -32px;
-}
+.arrow-down { background-position: 0 -32px; }
 
-.share-fb, .share-twitter, .share-email {
-  display: inline-block;
-  width: 48px;
-  height: 48px;
-  background: url(../images/shareiconset.png) no-repeat;
-}
+.share-fb, .share-twitter, .share-email { display: inline-block; width: 48px; height: 48px; background: url(../images/shareiconset.png) no-repeat; }
 
-.share-twitter {
-  background-position: 0 -48px;
-}
+.share-twitter { background-position: 0 -48px; }
 
-.share-email {
-  background-position: 0 -96px;
-}
+.share-email { background-position: 0 -96px; }
 
-.way {
-  position: relative;
-  background: black;
-  width: 84px;
-  height: 84px;
-  -webkit-border-radius: 7%;
-  -moz-border-radius: 7%;
-  border-radius: 7%;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 21px;
-  font-variant: small-caps;
-}
+.way { position: relative; background: black; width: 84px; height: 84px; -webkit-border-radius: 7%; -moz-border-radius: 7%; border-radius: 7%; text-transform: uppercase; text-align: center; font-size: 21px; font-variant: small-caps; }
 
-.way.large {
-  width: 120px;
-  height: 120px;
-  font-size: 31px;
-}
+.way.large { width: 120px; height: 120px; font-size: 31px; }
 
-.way-name {
-  width: 100%;
-  position: absolute;
-  top: 30%;
-  left: 0;
-  font-size: 58%;
-  opacity: 0.9;
-}
+.way-name { width: 100%; position: absolute; top: 30%; left: 0; font-size: 58%; opacity: 0.9; }
 
-.way-logo {
-  width: 100%;
-  position: absolute;
-  bottom: 25%;
-  left: 0;
-  letter-spacing: -1.5px;
-}
+.way-logo { width: 100%; position: absolute; bottom: 25%; left: 0; letter-spacing: -1.5px; }
 
-.ways-w {
-  color: #ec373a;
-}
+.ways-w { color: #ec373a; }
 
-.ways-a {
-  color: #faae43;
-}
+.ways-a { color: #faae43; }
 
-.ways-y {
-  color: #219646;
-}
+.ways-y { color: #219646; }
 
-.waysearch {
-  background: black;
-  height: 30px;
-  padding: 5px;
-}
+.waysearch { background: black; height: 30px; padding: 5px; }
 
-.waysearch input {
-  display: block;
-  background: #363636 no-repeat url(../images/search.png) 11px center;
-  font-size: 16px;
-  color: white;
-  height: 30px;
-  width: 100%;
-  padding: 10px 10px 5px 50px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border: none;
-}
+.waysearch input { display: block; background: #363636 no-repeat url(../images/search.png) 11px center; font-size: 16px; color: white; height: 30px; width: 100%; padding: 10px 10px 5px 50px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border: none; }
 
-.waylist {
-  position: absolute;
-  top: 40px;
-  left: 0;
-  right: 0;
-  bottom: 50px;
-  overflow: auto;
-  max-height: 100%;
-  font-variant: small-caps;
-}
+.waylist { position: absolute; top: 40px; left: 0; right: 0; bottom: 50px; overflow: auto; max-height: 100%; font-variant: small-caps; }
 
-.waylist-item {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 48px 120px;
-  position: relative;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  height: 120px;
-}
+.waylist-item { background: rgba(0, 0, 0, 0.4); padding: 48px 120px; position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; height: 120px; }
 
-.waylist-item + .waylist-item {
-  border-top: 2px solid black;
-}
+.waylist-item + .waylist-item { border-top: 2px solid black; }
 
-.waylist-item .way {
-  position: absolute;
-  left: 18px;
-  top: 18px;
-}
+.waylist-item .way { position: absolute; left: 18px; top: 18px; }
 
-.way-place {
-  font-size: 40px;
-  line-height: 24px;
-}
+.way-place { font-size: 40px; line-height: 24px; }
 
-.way-distance {
-  font-size: 16px;
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-}
+.way-distance { font-size: 16px; position: absolute; bottom: 12px; right: 12px; }
 
-#waymap .angular-google-map-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 50px;
-}
+#waymap .angular-google-map-container { position: absolute; top: 0; left: 0; right: 0; bottom: 50px; }
 
-.tools {
-  height: 50px;
-  background: no-repeat rgba(0, 0, 0, 0.7) center center;
-  text-align: center;
-  line-height: 50px;
-  font-size: 30px;
-}
+.tools { height: 50px; background: no-repeat rgba(0, 0, 0, 0.7) center center; text-align: center; line-height: 50px; font-size: 30px; }
 
-#showmap {
-  background-image: url(../images/map-icon.png);
-}
+#showmap { background-image: url(../images/map-icon.png); }
 
-#showwaylist {
-  background-image: url(../images/list-icon.png);
-}
+#showwaylist { background-image: url(../images/list-icon.png); }
 
-#waydetails {
-  background: rgba(0, 0, 0, 0.4);
-  overflow: auto;
-}
+#waydetails { background: rgba(0, 0, 0, 0.4); overflow: auto; }
 
-#waydetails section {
-  text-align: center;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 20px 0;
-  font-size: 14px;
-}
+#waydetails section { text-align: center; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 20px 0; font-size: 14px; }
 
-#waydetails section + section {
-  border-top: 2px solid black;
-}
+#waydetails section + section { border-top: 2px solid black; }
 
-#waydetails p {
-  opacity: 0.9;
-}
+#waydetails p { opacity: 0.9; }
 
-#waydetails .placeDetails {
-  height: 15%;
-}
+#waydetails .placeDetails { height: 15%; }
 
-#waydetails h1 {
-  font-variant: small-caps;
-  font-size: 40px;
-  font-weight: normal;
-  margin: 0;
-}
+#waydetails h1 { font-variant: small-caps; font-size: 40px; font-weight: normal; margin: 0; }
 
-#waydetails .placeDetails {
-  margin: 2px 0;
-}
+#waydetails .placeDetails { margin: 2px 0; }
 
-#waydetails .way {
-  margin: 0 auto;
-}
+#waydetails .way { margin: 0 auto; }
 
-#waydetails .wayDetails {
-  height: 40%;
-}
+#waydetails .wayDetails { height: 40%; }
 
-#waydetails .wayDetails p {
-  margin: 10px 0;
-}
+#waydetails .wayDetails p { margin: 10px 0; }
 
-#waydetails .wayDescription {
-  text-transform: uppercase;
-}
+#waydetails .wayDescription { text-transform: uppercase; }
 
-#waydetails .share {
-  height: 14%;
-}
+#waydetails .share { height: 14%; }
 
-#waydetails .share p {
-  margin: -10px 0 6px 0;
-}
+#waydetails .share p { margin: -10px 0 6px 0; }
 
-#waydetails .share div {
-  margin: 0 2px;
-}
+#waydetails .share div { margin: 0 2px; }
 
-#waydetails .map {
-  padding: 0;
-  position: relative;
-  height: 30%;
-}
+#waydetails .map { padding: 0; position: relative; height: 30%; }
 
-#waydetails .angular-google-map-container {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
+#waydetails .angular-google-map-container { position: absolute !important; top: 0; left: 0; right: 0; bottom: 0; }
 
-#waydetails section.expanding {
-  height: 25%;
-  padding: 0;
-  transition-duration: 400ms;
-  -webkit-transition-duration: 400ms;
-}
-#waydetails section.expanding .contents {
-  height: 100%;
-  background: black;
-}
-#waydetails section.expanding .contents p {
-  padding: 15px;
-  margin: 0;
-}
-#waydetails section.expanding.ng-leave.ng-leave-active {
-  opacity: 0;
-}
-#waydetails section.expanding.ng-enter {
-  opacity: 0;
-}
-#waydetails section.expanding.ng-hide-add.ng-hide-add-active {
-  opacity: 0;
-}
-#waydetails section.expanding.ng-hide-remove {
-  opacity: 0;
-}
-#waydetails section.expanding.ng-enter.ng-enter-active {
-  opacity: 1;
-}
-#waydetails section.expanding.ng-leave {
-  opacity: 1;
-}
-#waydetails section.expanding.ng-hide-add {
-  opacity: 1;
-}
-#waydetails section.expanding.ng-hide-remove.ng-hide-remove-active {
-  opacity: 1;
-}
+#waydetails section.expanding { height: 25%; padding: 0; transition-duration: 400ms; -webkit-transition-duration: 400ms; }
+#waydetails section.expanding .contents { height: 100%; background: black; }
+#waydetails section.expanding .contents p { padding: 15px; margin: 0; }
+#waydetails section.expanding.ng-leave.ng-leave-active { opacity: 0; }
+#waydetails section.expanding.ng-enter { opacity: 0; }
+#waydetails section.expanding.ng-hide-add.ng-hide-add-active { opacity: 0; }
+#waydetails section.expanding.ng-hide-remove { opacity: 0; }
+#waydetails section.expanding.ng-enter.ng-enter-active { opacity: 1; }
+#waydetails section.expanding.ng-leave { opacity: 1; }
+#waydetails section.expanding.ng-hide-add { opacity: 1; }
+#waydetails section.expanding.ng-hide-remove.ng-hide-remove-active { opacity: 1; }
 
-#waydetails section + section.expanding {
-  border-top: none;
-}
+#waydetails section + section.expanding { border-top: none; }
 
-.animated {
-  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  /* easeOutQuad */
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
+.animated { -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94); -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94); -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94); -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94); transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94); /* easeOutQuad */ -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
 /* Layout animations */
-#waymap, #waylist, #waybrowser, #waydetails {
-  transition-duration: 400ms;
-  -webkit-transition-duration: 400ms;
-}
+#waymap, #waylist, #waybrowser, #waydetails { transition-duration: 400ms; -webkit-transition-duration: 400ms; }
 
-.position-top #waymap {
-  transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-}
-.position-top #waylist {
-  transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  -webkit-transform: translateY(100%);
-}
+.position-top #waymap { transform: translateY(0); -ms-transform: translateY(0); -webkit-transform: translateY(0); }
+.position-top #waylist { transform: translateY(100%); -ms-transform: translateY(100%); -webkit-transform: translateY(100%); }
 
-.position-bottom #waymap {
-  transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  -webkit-transform: translateY(-100%);
-}
-.position-bottom #waylist {
-  transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-}
+.position-bottom #waymap { transform: translateY(-100%); -ms-transform: translateY(-100%); -webkit-transform: translateY(-100%); }
+.position-bottom #waylist { transform: translateY(0); -ms-transform: translateY(0); -webkit-transform: translateY(0); }
 
 /* Handle the details view sidescroll */
-#waybrowser {
-  opacity: 1;
-}
+#waybrowser { opacity: 1; }
 
-.show-details #waybrowser {
-  opacity: 0;
-}
+.show-details #waybrowser { opacity: 0; }
 
-#waydetails.ng-leave.ng-leave-active {
-  transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-}
-#waydetails.ng-enter {
-  transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-}
-#waydetails.ng-hide-add.ng-hide-add-active {
-  transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-}
-#waydetails.ng-hide-remove {
-  transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-}
-#waydetails.ng-enter.ng-enter-active {
-  transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-}
-#waydetails.ng-leave {
-  transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-}
-#waydetails.ng-hide-add {
-  transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-}
-#waydetails.ng-hide-remove.ng-hide-remove-active {
-  transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-}
+#waydetails.ng-leave.ng-leave-active { transform: translateX(100%); -ms-transform: translateX(100%); -webkit-transform: translateX(100%); }
+#waydetails.ng-enter { transform: translateX(100%); -ms-transform: translateX(100%); -webkit-transform: translateX(100%); }
+#waydetails.ng-hide-add.ng-hide-add-active { transform: translateX(100%); -ms-transform: translateX(100%); -webkit-transform: translateX(100%); }
+#waydetails.ng-hide-remove { transform: translateX(100%); -ms-transform: translateX(100%); -webkit-transform: translateX(100%); }
+#waydetails.ng-enter.ng-enter-active { transform: translateX(0); -ms-transform: translateX(0); -webkit-transform: translateX(0); }
+#waydetails.ng-leave { transform: translateX(0); -ms-transform: translateX(0); -webkit-transform: translateX(0); }
+#waydetails.ng-hide-add { transform: translateX(0); -ms-transform: translateX(0); -webkit-transform: translateX(0); }
+#waydetails.ng-hide-remove.ng-hide-remove-active { transform: translateX(0); -ms-transform: translateX(0); -webkit-transform: translateX(0); }
 
-.fading {
-  transition-duration: 400ms;
-  -webkit-transition-duration: 400ms;
-}
-.fading.ng-leave.ng-leave-active {
-  opacity: 0;
-}
-.fading.ng-enter {
-  opacity: 0;
-}
-.fading.ng-hide-add.ng-hide-add-active {
-  opacity: 0;
-}
-.fading.ng-hide-remove {
-  opacity: 0;
-}
-.fading.ng-enter.ng-enter-active {
-  opacity: 1;
-}
-.fading.ng-leave {
-  opacity: 1;
-}
-.fading.ng-hide-add {
-  opacity: 1;
-}
-.fading.ng-hide-remove.ng-hide-remove-active {
-  opacity: 1;
-}
+.fading { transition-duration: 400ms; -webkit-transition-duration: 400ms; }
+.fading.ng-leave.ng-leave-active { opacity: 0; }
+.fading.ng-enter { opacity: 0; }
+.fading.ng-hide-add.ng-hide-add-active { opacity: 0; }
+.fading.ng-hide-remove { opacity: 0; }
+.fading.ng-enter.ng-enter-active { opacity: 1; }
+.fading.ng-leave { opacity: 1; }
+.fading.ng-hide-add { opacity: 1; }
+.fading.ng-hide-remove.ng-hide-remove-active { opacity: 1; }

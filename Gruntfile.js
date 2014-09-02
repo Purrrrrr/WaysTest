@@ -4,64 +4,71 @@ module.exports = function(grunt) {
       app: "www",
       src: '<%= project.app %>/src',
       dist: '<%= project.app %>/dist',
-      fileparts: '<%= project.app %>/dist/.fileparts',
-      scss: [
+      css: [
+        '<%= project.src %>/scss/base.scss'
       ],
-      js: [
-        '<%= project.src %>/js/libs/angular/angular.js',
-        '<%= project.src %>/js/libs/lodash/**/*.js',
-        '<%= project.src %>/js/libs/angular-*/**/*.js',
-        '<%= project.src %>/js/parse.js',
-        '<%= project.src %>/js/theways.js',
-        '<%= project.src %>/js/*.js'
-      ]
+      js: {
+        base_libs: [
+          '<%= project.src %>/js/libs/lodash/**/*.js',
+          '<%= project.src %>/js/libs/angular/angular.js'
+        ],
+        angular_libs: [
+          '<%= project.src %>/js/libs/angular-*/**/*.js',
+        ],
+        main: [
+          '<%= project.src %>/js/parse.js',
+          '<%= project.src %>/js/theways.js',
+          '<%= project.src %>/js/*.js'
+        ]
+      }
     },
     sass: {
       dist: {
         options: {
-          style: 'expanded',
+          style: 'compact',
+          // sourcemap: 'auto',
           // compass: true
         },
         files: {
-          '<%= project.dist%>/style.css': '<%= project.src %>/scss/base.scss',
+          '<%= project.dist%>/style.css': '<%= project.css %>'
         }
       }
     },
-    /*
     uglify: {
       options: {
         sourceMap: true
       },
       dist: {
         files: {
-          '<%= project.dist%>/scripts.js': '<%= project.js %>',
+          '<%= project.dist%>/libraries.js': '<%= project.js.base_libs %>',
+          '<%= project.dist%>/angular-libraries.js': '<%= project.js.angular_libs %>',
+          '<%= project.dist%>/scripts.js': '<%= project.js.main %>',
         },
       }
     },
     jshint: {
       // define the files to lint
-      files: ['gruntfile.js', 'src/** /*.js', 'test/** /*.js'],
-      // configure JSHint (documented at http://www.jshint.com/docs/)
+      files: ['gruntfile.js', '<%= project.src%>/js/*.js'],
       options: {
           // more options here if you want to override JSHint defaults
         globals: {
-          jQuery: true,
           console: true,
           module: true
         }
       }
     },
     watch: {
-      files: ['<%= jshint.files %>'],
-      tasks: ['jshint']
-      } */
+      files: ['<%= jshint.files %>', '<%= project.css %>'],
+      tasks: ['default']
+    }
   });
 
-  //grunt.loadNpmTasks('grunt-contrib-uglify');
-  //grunt.loadNpmTasks('grunt-contrib-jshint');
-  //grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['sass']);
+  grunt.registerTask('default', ['jshint', 'sass', 'newer:uglify:dist']);
 
 }

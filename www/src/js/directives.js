@@ -20,7 +20,7 @@ theWaysApp.directive('grayscale', function() {
       streetViewControl: false,
       mapTypeControl: false, 
       styles: styles
-    }
+    };
 
     return {       
       require: 'googleMap',

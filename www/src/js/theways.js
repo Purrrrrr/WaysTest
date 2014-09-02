@@ -1,5 +1,9 @@
-var theWaysApp = angular.module('theways', ['ngAnimate', 'ngTouch', 'ui.router', 'google-maps', 'ParseServices']);
-theWaysApp.config(function($stateProvider, $urlRouterProvider) {
+var theWaysApp = angular.module('theways', 
+  ['ngAnimate', 'ngTouch', 'ui.router', 'google-maps', 'ParseServices']);
+
+theWaysApp.config(
+       ['$stateProvider', '$urlRouterProvider', 
+function($stateProvider,   $urlRouterProvider) {
   // For any unmatched url, redirect to /state1
   $urlRouterProvider.otherwise("/splash");
   // Now set up the states
@@ -40,15 +44,15 @@ theWaysApp.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: "partials/ways.details.html",
       }
     }
-  }) 
-})
+  });
+}])
 /* Animation class magik */
 .run(['$rootScope', '$state', function ($rootScope, $state) {
   $rootScope.goUp = function() {
     $state.go("^");
-  }
+  };
 
-  $rootScope.viewClasses = []
+  $rootScope.viewClasses = [];
   $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
 
     var viewClasses = [];
@@ -66,7 +70,7 @@ theWaysApp.config(function($stateProvider, $urlRouterProvider) {
 .directive("uiView", function() {
   return {
     link: function(scope, elem, attrs) {
-      elem.toggleClass("empty-view", elem.children().length == 0);
+      elem.toggleClass("empty-view", elem.children().length === 0);
     }
   };
 });

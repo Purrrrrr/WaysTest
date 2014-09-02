@@ -1,12 +1,12 @@
-theWaysApp.service('WaysService', function(ParseSDK) {
+theWaysApp.service('WaysService', ['ParseSDK', function(ParseSDK) {
   // TODO: Some caching system could be nice  
  
   this.getWays = function(position, search, successFunc) {
     ParseSDK.getWays(position, search, successFunc, function() {});
-  }
+  };
   this.getWay = function(id, successFunc) {
     ParseSDK.getWay(id, successFunc, function() {});
-  }
+  };
   
   /*
   //Calculates the distance between to points
@@ -23,7 +23,7 @@ theWaysApp.service('WaysService', function(ParseSDK) {
 
   var d = R * c;
   */
-});
+}]);
 theWaysApp.service('BackgroundService', function() {
 
 });

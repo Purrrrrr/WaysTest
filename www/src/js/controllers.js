@@ -1,12 +1,16 @@
-theWaysApp.controller('WayListController', function($scope, $state, WaysService) {
+theWaysApp.controller('WayListController', 
+       ['$scope', '$state', 'WaysService', 
+function($scope,   $state,   WaysService) {
   $scope.gotoWay = function(way) {
     $state.go('ways.list.way', {wayId: way.id});
   };
   WaysService.getWays({}, "", function(ways) {
     $scope.ways = ways;
   });
-});
-theWaysApp.controller('MapController', function($scope, $state, WaysService) {
+}]);
+theWaysApp.controller('MapController', 
+       ['$scope', '$state', 'WaysService', 
+function($scope,   $state,   WaysService) {
   $scope.map = {
     center: {
       latitude: 60.166667,
@@ -20,10 +24,12 @@ theWaysApp.controller('MapController', function($scope, $state, WaysService) {
   WaysService.getWays({}, "", function(ways) {
     $scope.wayMarkers = ways;
   });
-});
-theWaysApp.controller('WayController', function($scope, $state, WaysService) {
+}]);
+theWaysApp.controller('WayController', 
+       ['$scope', '$state', 'WaysService', 
+function($scope,   $state,   WaysService) {
   WaysService.getWay($state.params.wayId, function(way) {
     $scope.way = way;
     $scope.mapCenter = _.clone(way.position);
   });
-});
+}]);

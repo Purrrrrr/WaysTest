@@ -37,7 +37,7 @@ angular.module('ParseServices', [])
       allWays.fetch({
         success: function(coll) {
           var objs = _.map(coll.models, parseModelToPDO);
-          successFunc(objs)
+          successFunc(objs);
           $rootScope.$apply();
         },
         error: function(object, error) {
@@ -58,18 +58,18 @@ angular.module('ParseServices', [])
       });
     },
     saveWay: function(data, successFunc) {
-      var way = new Way()
+      var way = new Way();
       way.save(data, {success: successFunc});
     },
     saveWays: function(ways, successFunc) {
       ////console.log(allWays);
       //allWays.remove(allWays);
       angular.forEach(ways, function(data) {
-        var way = new Way()
+        var way = new Way();
         way.save(data, {});
       });
       //console.log(allWays);
     }
-  }
+  };
 
 }]);

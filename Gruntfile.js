@@ -27,11 +27,6 @@ module.exports = function(grunt) {
     },
     sass: {
       dist: {
-        options: {
-          style: 'compact',
-          // sourcemap: 'auto',
-          // compass: true
-        },
         files: {
           '<%= project.dist%>/style.css': '<%= project.css.main %>',
         }
@@ -61,12 +56,12 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['<%= jshint.files %>', '<%= project.css %>'],
+      files: ['<%= jshint.files %>', '<%= project.css.main %>'],
       tasks: ['default']
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-newer');

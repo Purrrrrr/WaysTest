@@ -4,9 +4,10 @@ module.exports = function(grunt) {
       app: "www",
       src: '<%= project.app %>/src',
       dist: '<%= project.app %>/dist',
-      css: [
-        '<%= project.src %>/scss/base.scss'
-      ],
+      components: '<%= project.src %>/components',
+      css: {
+        main: '<%= project.src %>/scss/base.scss',
+      },
       js: {
         base_libs: [
           '<%= project.src %>/js/libs/parse/*.js',
@@ -19,6 +20,7 @@ module.exports = function(grunt) {
         main: [
           '<%= project.src %>/js/parse.js',
           '<%= project.src %>/js/theways.js',
+          '<%= project.src %>/js/components/**/*.js',
           '<%= project.src %>/js/*.js'
         ]
       }
@@ -31,7 +33,7 @@ module.exports = function(grunt) {
           // compass: true
         },
         files: {
-          '<%= project.dist%>/style.css': '<%= project.css %>'
+          '<%= project.dist%>/style.css': '<%= project.css.main %>',
         }
       }
     },

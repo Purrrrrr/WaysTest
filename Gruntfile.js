@@ -9,6 +9,7 @@ module.exports = function(grunt) {
       ],
       js: {
         base_libs: [
+          '<%= project.src %>/js/libs/parse/*.js',
           '<%= project.src %>/js/libs/lodash/**/*.js',
           '<%= project.src %>/js/libs/angular/angular.js'
         ],

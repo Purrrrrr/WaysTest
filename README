@@ -1,0 +1,12 @@
+INSTALLATION
+
+You'll need to install npm to compile everything with grunt
+
+First we need to install the grunt-cli package. This requires admin priviledges:
+npm install -g grunt-cli 
+
+The navigate to the project directory and run:
+npm install
+grunt
+
+You can then run "grunt watch" to keep the project files up to date while editing.

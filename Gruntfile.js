@@ -46,7 +46,10 @@ module.exports = function(grunt) {
     },
     jshint: {
       // define the files to lint
-      files: ['gruntfile.js', '<%= project.src%>/js/*.js'],
+      files: [
+        'Gruntfile.js', 
+        '<%= project.js.main %>',
+      ],
       options: {
           // more options here if you want to override JSHint defaults
         globals: {
@@ -56,7 +59,12 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['<%= jshint.files %>', '<%= project.css.main %>'],
+      files: [
+        '<%= jshint.files %>', 
+        '<%= project.css.main %>',
+        '<%= project.js.base_libs %>',
+        '<%= project.js.angular_libs %>',
+      ],
       tasks: ['default']
     }
   });
@@ -69,4 +77,4 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['jshint', 'sass', 'newer:uglify:dist']);
 
-}
+};

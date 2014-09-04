@@ -1,5 +1,6 @@
 /** Implements the grayscale coloring of the ways map */
-theWaysApp.directive('grayscale', function() {
+theWaysApp.directive('grayscale', 
+['GoogleMapApi'.ns(), function(GoogleMapApi) {
   return (function(styles) {
     var grayScaleOptions = {
       streetViewControl: false,
@@ -8,13 +9,19 @@ theWaysApp.directive('grayscale', function() {
     };
 
     return {       
-      require: 'googleMap',
+      require: 'uiGmapGoogleMap',
       restrict: 'A', 
-      priority: 1000,
+      priority: 10000,
       link: function postLink(originalScope, iElement, iAttrs, mapController) {
-        var map = mapController.getMap();
-        if (!map) return;
-        map.setOptions(grayScaleOptions);
+        GoogleMapApi.then(function() {
+          var scope = mapController.getScope();
+          window.ss = scope;
+          var map = mapController.getScope().map;
+          console.log(scope);
+          console.log(scope.map);
+          if (!map) return;
+          map.setOptions(grayScaleOptions);
+        });
       }
     };
   })([
@@ -67,4 +74,4 @@ theWaysApp.directive('grayscale', function() {
         ]
     }
   ]);
-});
+}]);

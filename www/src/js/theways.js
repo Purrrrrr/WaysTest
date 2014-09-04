@@ -1,5 +1,5 @@
 var theWaysApp = angular.module('theways', 
-  ['ngAnimate', 'ngTouch', 'ui.router', 'google-maps', 'ParseServices']);
+  ['ngAnimate', 'ngTouch', 'ui.router', 'uiGmapgoogle-maps', 'ParseServices']);
 
 theWaysApp.config(
        ['$stateProvider', '$urlRouterProvider', 

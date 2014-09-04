@@ -2,9 +2,10 @@
 <div id="waybrowser" class="app-view">
   <!-- Map -->
   <div id="waymap" ng-controller="MapController" class="animated bottomTools">
-    <google-map draggable="true" grayscale center="map.center" zoom="map.zoom">
-      <marker ng-repeat="way in wayMarkers" click="gotoWay(way)" icon="'images/way-icon.png'" coords="way.position"></marker>
-    </google-map>
+    <ui-gmap-google-map draggable="true" grayscale center="map.center" zoom="map.zoom">
+      <ui-gmap-marker ng-repeat="way in wayMarkers" click="gotoWay(way)" icon="'images/way-icon.png'" coords="way.position" idKey="way.id"></ui-gmap-marker>
+ 
+    </ui-gmap-google-map>
     <div id="showwaylist"  ui-sref="ways.list" class="tools">
     </div>
   </div>

@@ -10,12 +10,12 @@ function($stateProvider,   $urlRouterProvider) {
   $stateProvider
   .state('splash', {
     url: "/splash",
-    templateUrl: "partials/splash.html"
+    templateUrl: "partials/splashscreen.html"
   })
   .state('ways', {
     abstract: true,
     url: "/ways",
-    templateUrl: "partials/wayslayout.html"
+    templateUrl: "partials/browse-ways.html"
   })
   .state('ways.map', {
     url: "/map",
@@ -31,7 +31,7 @@ function($stateProvider,   $urlRouterProvider) {
     views: {
       "details@ways": {
         controller: 'WayController',
-        templateUrl: "partials/ways.details.html",
+        templateUrl: "partials/way-details.html",
       }
     }
   }) 

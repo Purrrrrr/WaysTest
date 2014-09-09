@@ -40,10 +40,9 @@ $searchModeToggleHeight: 50px; $wayListItemHeight: 120px;
   display: none;
 }
 
-@import "splash";
-@import "icons";
-@import "listviews";
-@import "detailview";
+@import "views/splash-view";
+@import "views/browse-view";
+@import "views/details-view";
 @import "animations";
 @import "components/way-icon";
 @import "components/network-missing-indicator";

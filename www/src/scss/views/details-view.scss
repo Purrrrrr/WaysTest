@@ -1,3 +1,4 @@
+
 #waydetails {
   background: rgba(0,0,0,0.4);
   overflow: auto;
@@ -62,7 +63,7 @@
   bottom: 0;
 }
 
-@import "animation_mixins";
+@import "../animation_mixins";
 #waydetails section.expanding {
   height: 25%;
   padding: 0;
@@ -87,4 +88,29 @@
 }
 #waydetails section + section.expanding {
   border-top: none;
+}
+
+/** Arrows and share icons */
+$arrowIconSize: 32px;
+$shareIconSize: 48px;
+
+.arrow-up, .arrow-down {
+  width: $arrowIconSize;
+  height: $arrowIconSize;
+  background: url(../images/arrowset.png) no-repeat;
+}
+.arrow-down {
+  background-position: 0 (-$arrowIconSize);
+}
+.share-fb, .share-twitter, .share-email {
+  display: inline-block;
+  width: $shareIconSize;
+  height: $shareIconSize;
+  background: url(../images/shareiconset.png) no-repeat;
+}
+.share-twitter{
+  background-position: 0 ($shareIconSize*-1);
+}
+.share-email{
+  background-position: 0 ($shareIconSize*-2);
 }

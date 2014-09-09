@@ -112,26 +112,6 @@ nav {
   background: url(../images/splash_screen_logo.png) no-repeat center center;
   background-size: contain; }
 
-.arrow-up, .arrow-down {
-  width: 32px;
-  height: 32px;
-  background: url(../images/arrowset.png) no-repeat; }
-
-.arrow-down {
-  background-position: 0 -32px; }
-
-.share-fb, .share-twitter, .share-email {
-  display: inline-block;
-  width: 48px;
-  height: 48px;
-  background: url(../images/shareiconset.png) no-repeat; }
-
-.share-twitter {
-  background-position: 0 -48px; }
-
-.share-email {
-  background-position: 0 -96px; }
-
 .waysearch {
   background: black;
   height: 30px;
@@ -300,6 +280,27 @@ nav {
 
 #waydetails section + section.expanding {
   border-top: none; }
+
+/** Arrows and share icons */
+.arrow-up, .arrow-down {
+  width: 32px;
+  height: 32px;
+  background: url(../images/arrowset.png) no-repeat; }
+
+.arrow-down {
+  background-position: 0 -32px; }
+
+.share-fb, .share-twitter, .share-email {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background: url(../images/shareiconset.png) no-repeat; }
+
+.share-twitter {
+  background-position: 0 -48px; }
+
+.share-email {
+  background-position: 0 -96px; }
 
 .animated {
   -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);

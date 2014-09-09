@@ -16,6 +16,7 @@ module.exports = function(grunt) {
         ],
         angular_libs: [
           '<%= project.src %>/js/libs/angular-*/**/*.js',
+          '<%= project.src %>/js/libs/ng-*/**/*.js',
         ],
         main: [
           '<%= project.src %>/js/parse.js',
@@ -61,7 +62,7 @@ module.exports = function(grunt) {
     watch: {
       files: [
         '<%= jshint.files %>', 
-        '<%= project.css.main %>',
+        '<%= project.src %>/scss/**/*.scss',
         '<%= project.js.base_libs %>',
         '<%= project.js.angular_libs %>',
       ],

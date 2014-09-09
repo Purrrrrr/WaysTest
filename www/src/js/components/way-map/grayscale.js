@@ -17,8 +17,6 @@ theWaysApp.directive('grayscale',
           var scope = mapController.getScope();
           window.ss = scope;
           var map = mapController.getScope().map;
-          console.log(scope);
-          console.log(scope.map);
           if (!map) return;
           map.setOptions(grayScaleOptions);
         });

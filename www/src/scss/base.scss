@@ -1,6 +1,5 @@
 $searchHeight: 40px;
-$searchModeToggleHeight: 50px;
-$wayListItemHeight: 120px;
+$searchModeToggleHeight: 50px; $wayListItemHeight: 120px;
 
 @import "layout";
 
@@ -47,3 +46,4 @@ $wayListItemHeight: 120px;
 @import "detailview";
 @import "animations";
 @import "components/way-icon";
+@import "components/network-missing-indicator";

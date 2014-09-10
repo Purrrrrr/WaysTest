@@ -1,4 +1,6 @@
 module.exports = function(grunt) {
+  require('time-grunt')(grunt);
+
   grunt.initConfig({
     project: {
       app: "www",
@@ -67,6 +69,17 @@ module.exports = function(grunt) {
         '<%= project.js.angular_libs %>',
       ],
       tasks: ['default']
+    },
+    fastWatch: {
+      all: {
+        dir: '.',
+        trigger: {
+          server: {
+            care: ["*.js","*.scss"],
+            tasks: ['default']
+          }
+        }
+      },
     }
   });
 
@@ -74,7 +87,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-newer');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-fast-watch');
 
   grunt.registerTask('default', ['sass', 'newer:uglify:dist', 'jshint']);
 

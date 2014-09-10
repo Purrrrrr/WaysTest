@@ -76,6 +76,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['jshint', 'sass', 'newer:uglify:dist']);
+  grunt.registerTask('default', ['sass', 'newer:uglify:dist', 'jshint']);
 
 };

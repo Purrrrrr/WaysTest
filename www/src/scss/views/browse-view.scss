@@ -3,7 +3,7 @@ $wayListItemHeight: 120px;
 
 .waysearch {
   background: black;
-  height: $searchHeight - 10;
+  height: $searchHeight;
   padding: 5px;
 
   input {
@@ -14,9 +14,6 @@ $wayListItemHeight: 120px;
     height: $searchHeight - 10;
     width: 100%;
     padding: 10px 10px 5px 50px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
     border: none;
   }
 }
@@ -36,9 +33,6 @@ $wayListItemHeight: 120px;
   background: rgba(0,0,0,0.4);
   padding: $wayListItemHeight*0.40 $wayListItemHeight;
   position: relative;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   height: $wayListItemHeight;
 
   .way {

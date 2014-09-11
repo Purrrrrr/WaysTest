@@ -1,76 +1,31 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0; }
-
 body {
   background: black;
   color: white;
   overflow: hidden;
   font-family: sans-serif; }
 
-#background {
+nav {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  z-index: 1; }
-
-#app {
-  position: relative;
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 2; }
-
-nav {
-  display: table-row;
-  position: relative;
-  width: 100%;
   height: 55px;
-  background: rgba(0, 0, 0, 0.6); }
-
-#logo {
-  display: table-cell;
-  height: 44px;
-  position: relative;
-  margin: 0 auto;
-  top: 5.5px;
-  left: 0; }
+  background: black;
+  z-index: 2; }
+  nav .logo {
+    height: 77px;
+    position: absolute;
+    top: 11px;
+    right: 11px; }
 
 #contents {
-  display: table-row;
   height: 100%;
   width: 100%;
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  border-top: 55px solid transparent; }
 
-#mainview {
-  display: table-cell;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden; }
-
-/*
-.rowContainer {
-  position: relative;
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  height: 100%;
-}
-.row {
-  display: table-row;
-  position: relative;
-  width: 100%;
-}
-.row.expand {
-  height: 100%;
-} */
-#background {
+body {
   background: black url(../images/city.jpg) fixed center top; }
 
 .container {
@@ -89,6 +44,17 @@ nav {
 .empty-view {
   display: none; }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 #splash {
   position: absolute;
   top: 10%;
@@ -100,7 +66,7 @@ nav {
 
 .waysearch {
   background: black;
-  height: 30px;
+  height: 40px;
   padding: 5px; }
   .waysearch input {
     display: block;
@@ -110,9 +76,6 @@ nav {
     height: 30px;
     width: 100%;
     padding: 10px 10px 5px 50px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
     border: none; }
 
 .waylist {
@@ -129,9 +92,6 @@ nav {
   background: rgba(0, 0, 0, 0.4);
   padding: 48px 120px;
   position: relative;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   height: 120px; }
   .waylist-item .way {
     position: absolute;

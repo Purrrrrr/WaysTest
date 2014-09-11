@@ -11,17 +11,11 @@
   <link rel="stylesheet" type="text/css" href="dist/style.css"> 
 </head>
 <body ng-app="theways" ng-class="viewClasses" >
-  <div id="background">
-  </div>
-  <div id="app">
-    <network-missing-indicator></network-missing-indicator>
-    <nav>
-      <img id="logo" alt="The ways" src="images/logo_for_menu.png" />
-    </nav>
-    <div id="contents">
-      <div ui-view id="mainview" class="animated fading">
-      </div>
-    </div>
+  <network-missing-indicator></network-missing-indicator>
+  <nav>
+    <img class="logo" alt="The ways" src="images/logo_for_menu.png" />
+  </nav>
+  <div ui-view id="contents" class="animated fading">
   </div>
   <!--<script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>-->
   <script type="text/javascript" src="dist/libraries.js"></script>

@@ -1,6 +1,6 @@
 @import "layout";
 
-#background {
+body {
   background: black url(../images/city.jpg) fixed center top; 
 }
 
@@ -23,6 +23,7 @@
   display: none;
 }
 
+@import "css-fixes";
 @import "views/splash-view";
 @import "views/browse-view";
 @import "views/details-view";

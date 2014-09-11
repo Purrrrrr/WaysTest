@@ -4,9 +4,13 @@ function($scope,   $state,   WaysService) {
   $scope.gotoWay = function(way) {
     $state.go('ways.list.way', {wayId: way.id});
   };
-  $scope.waysPromise = WaysService.getWays({}).then(function(ways) {
-    $scope.ways = ways;
-  });
+  $scope.load = function() {
+    console.log("Loading");
+    $scope.waysPromise = WaysService.getWays({}).then(function(ways) {
+      $scope.ways = ways;
+    });
+  };
+  $scope.load();
 }]);
 theWaysApp.controller('WayController', 
        ['$scope', '$state', 'WaysService', 

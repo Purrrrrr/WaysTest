@@ -1,0 +1,32 @@
+@import "../animation_mixins";
+
+@mixin darkscreen() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.2);
+}
+
+.resource-load-failed {
+  @include darkscreen();
+  text-align: center;
+  font-size: 300%;
+}
+.resource-loading {
+  @include darkscreen();
+  .spinner {
+    $size: 100px;
+    width: $size;
+    height: $size;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-$size/2, -$size/2));
+
+    path, rect{
+      fill: #FFF;
+    }
+  }
+}

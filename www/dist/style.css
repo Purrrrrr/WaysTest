@@ -367,6 +367,35 @@ nav {
 .ways-y {
   color: #219646; }
 
+.resource-load-failed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: 300%; }
+
+.resource-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.2); }
+  .resource-loading .spinner {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50px, -50px);
+    -ms-transform: translate(-50px, -50px);
+    -webkit-transform: translate(-50px, -50px); }
+    .resource-loading .spinner path, .resource-loading .spinner rect {
+      fill: #FFF; }
+
 #network-missing {
   position: absolute;
   top: 0;

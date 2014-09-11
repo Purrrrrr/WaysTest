@@ -1,0 +1,7 @@
+<div ng-if="status == 'success'" ng-transclude></div>
+<div class="network-failed" ng-if="status == 'fail'" ng-click="onReload">
+  Fail
+</div>
+<div class="loading" ng-if="status == 'loading'">
+  Loading...
+</div>

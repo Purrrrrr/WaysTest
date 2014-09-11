@@ -32,14 +32,28 @@ function($cordovaNetwork, $rootScope) {
     }
   };
 }]);
-theWaysApp.service('WaysService', ['ParseSDK', function(ParseSDK) {
+theWaysApp.service('WaysService', ['ParseSDK', '$q', function(ParseSDK, $q) {
   // TODO: Some caching system could be nice  
  
-  this.getWays = function(position, search, successFunc) {
-    ParseSDK.getWays(position, search, successFunc, function() {});
+  this.getWays = function(position) {
+    var deferred = $q.defer();
+    ParseSDK.getWays(position, "", function(objs) {
+      deferred.resolve(objs);
+    }, function(err) {
+      deferred.reject(err);
+    });
+
+    return deferred.promise;
   };
   this.getWay = function(id, successFunc) {
-    ParseSDK.getWay(id, successFunc, function() {});
+    var deferred = $q.defer();
+    ParseSDK.getWay(id, function(obj) {
+      deferred.resolve(obj);
+    }, function(err) {
+      deferred.reject(err);
+    });
+
+    return deferred.promise;
   };
   
   /*

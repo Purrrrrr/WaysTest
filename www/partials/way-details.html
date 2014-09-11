@@ -1,36 +1,38 @@
-<section class="placeDetails" ng-click="showPlaceDetails = !showPlaceDetails">
-  <h1>{{way.place}}</h1>
-  <p class="placeDetails">{{way.placeDetails}}</p>
-</section>
-<section ng-show="showPlaceDetails" class="morePlaceDetails animated expanding">
-  <div class="arrow"></div>
-  <div class="animated contents">
-    <p>...</p>
-  </div>
-</section>
-<section class="wayDetails" ng-click="showWayDetails = !showWayDetails">
-<way name="way.name" size="large"></way>
-<p class="wayDescription">
-{{way.description}}
-</p>
-<p class="wayTime">
-{{way.endTime}} remaining.
-</p>
-</section>
-<section ng-show="showWayDetails" class="moreWayDetails expanding">
-  <div class="arrow"></div>
-  <div class="animated contents">
-    <p>{{way.details}}</p>
-  </div>
-</section>
-<section class="share">
-  <p>share in</p>
-  <div class="share-fb"></div>
-  <div class="share-twitter"></div>
-  <div class="share-email"></div>
-</section>
-<section ng-if="mapCenter" class="map">
-  <ui-gmap-google-map pan="true" draggable="true" grayscale center="mapCenter" zoom="15">
-    <ui-gmap-marker icon="'images/way-icon.png'" coords="way.position" idKey="way.id"></ui-gmap-marker>
-  </ui-gmap-google-map>
-</section>
+<div show-resource-status="wayPromise">
+  <section class="placeDetails" ng-click="showPlaceDetails = !showPlaceDetails">
+    <h1>{{way.place}}</h1>
+    <p class="placeDetails">{{way.placeDetails}}</p>
+  </section>
+  <section ng-show="showPlaceDetails" class="morePlaceDetails animated expanding">
+    <div class="arrow"></div>
+    <div class="animated contents">
+      <p>...</p>
+    </div>
+  </section>
+  <section class="wayDetails" ng-click="showWayDetails = !showWayDetails">
+  <way name="way.name" size="large"></way>
+  <p class="wayDescription">
+  {{way.description}}
+  </p>
+  <p class="wayTime">
+  {{way.endTime}} remaining.
+  </p>
+  </section>
+  <section ng-show="showWayDetails" class="moreWayDetails expanding">
+    <div class="arrow"></div>
+    <div class="animated contents">
+      <p>{{way.details}}</p>
+    </div>
+  </section>
+  <section class="share">
+    <p>share in</p>
+    <div class="share-fb"></div>
+    <div class="share-twitter"></div>
+    <div class="share-email"></div>
+  </section>
+  <section ng-if="mapCenter" class="map">
+    <ui-gmap-google-map pan="true" draggable="true" grayscale center="mapCenter" zoom="15">
+      <ui-gmap-marker icon="'images/way-icon.png'" coords="way.position" idKey="way.id"></ui-gmap-marker>
+    </ui-gmap-google-map>
+  </section>
+</div>

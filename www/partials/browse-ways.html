@@ -3,7 +3,7 @@
   <div class="waysearch">
     <input type="text" ng-model="search" placeholder="Search WAYS" />
   </div>
-  <div class="waylist">
+  <div show-resource-status="waysPromise" class="waylist">
     <div ng-repeat="way in ways" ng-click="gotoWay(way)" class="waylist-item">
       <way name="way.name"></way>
       <div class="way-place">{{way.place}}</div>

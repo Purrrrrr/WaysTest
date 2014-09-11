@@ -1,20 +1,24 @@
+$searchHeight: 40px;
+$wayListItemHeight: 120px;
+
 .waysearch {
   background: black;
   height: $searchHeight - 10;
   padding: 5px;
-}
-.waysearch input {
-  display: block;
-  background: #363636 no-repeat url(../images/search.png) 11px center;
-  font-size: 16px;
-  color: white;
-  height: $searchHeight - 10;
-  width: 100%;
-  padding: 10px 10px 5px 50px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border: none;
+
+  input {
+    display: block;
+    background: #363636 no-repeat url(../images/search.png) 11px center;
+    font-size: 16px;
+    color: white;
+    height: $searchHeight - 10;
+    width: 100%;
+    padding: 10px 10px 5px 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: none;
+  }
 }
 
 .waylist {
@@ -22,7 +26,7 @@
   top: $searchHeight;
   left: 0;
   right: 0;
-  bottom: $searchModeToggleHeight;
+  bottom: 0;
   overflow: auto;
   max-height: 100%;
   font-variant: small-caps;
@@ -36,14 +40,16 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   height: $wayListItemHeight;
-}
-.waylist-item + .waylist-item {
-  border-top: 2px solid black;
-}
-.waylist-item .way {
-  position: absolute;
-  left: $wayListItemHeight*0.15; 
-  top: $wayListItemHeight*0.15;
+
+  .way {
+    position: absolute;
+    left: $wayListItemHeight*0.15; 
+    top: $wayListItemHeight*0.15;
+  }
+
+  &+& {
+    border-top: 2px solid black;
+  }
 }
 .way-place {
   font-size: 40px;
@@ -54,25 +60,4 @@
   position: absolute;
   bottom: 12px;
   right: 12px;
-}
-#waymap .angular-google-map-container { 
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: $searchModeToggleHeight;
-}
-
-.tools {
-  height: $searchModeToggleHeight;
-  background: no-repeat rgba(0,0,0,0.7) center center;
-  text-align: center;
-  line-height: $searchModeToggleHeight;
-  font-size: 30px;
-}
-#showmap {
-  background-image: url(../images/map-icon.png); 
-}
-#showwaylist {
-  background-image: url(../images/list-icon.png); 
 }

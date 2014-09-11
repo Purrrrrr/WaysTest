@@ -1,6 +1,3 @@
-$searchHeight: 40px;
-$searchModeToggleHeight: 50px; $wayListItemHeight: 120px;
-
 @import "layout";
 
 #background {
@@ -20,20 +17,6 @@ $searchModeToggleHeight: 50px; $wayListItemHeight: 120px;
   height: 100%;
   width: 100%;
   overflow: hidden;
-}
-.bottomTools {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.bottomTools > .tools {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: $searchModeToggleHeight;
 }
 
 .empty-view {

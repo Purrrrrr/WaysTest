@@ -17,31 +17,16 @@ function($stateProvider,   $urlRouterProvider) {
     url: "/ways",
     templateUrl: "partials/browse-ways.html"
   })
-  .state('ways.map', {
-    url: "/map",
-    data: {position: "top"},
-  })
   .state('ways.list', {
     url: "/list",
-    data: {position: "bottom"},
   })
-  .state('ways.map.way', {
+  .state('ways.list.way', {
     url: "/way/:wayId",
-    data: {position: "top", details: true},
+    data: {details: true},
     views: {
       "details@ways": {
         controller: 'WayController',
         templateUrl: "partials/way-details.html",
-      }
-    }
-  }) 
-  .state('ways.list.way', {
-    url: "/way/:wayId",
-    data: {position: "bottom", details: true},
-    views: {
-      "details@ways": {
-        controller: 'WayController',
-        templateUrl: "partials/ways.details.html",
       }
     }
   });
@@ -57,9 +42,6 @@ function($stateProvider,   $urlRouterProvider) {
 
     var viewClasses = [];
     if (toState.data) {
-      if (toState.data.position) {
-        viewClasses.push("position-"+toState.data.position);
-      }
       if (toState.data.details) {
         viewClasses.push("show-details");
       }

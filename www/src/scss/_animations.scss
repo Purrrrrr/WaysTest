@@ -15,32 +15,16 @@
 }
 
 /* Layout animations */
-#waymap, #waylist, #waybrowser, #waydetails {
+#waylist, #waybrowser, #waydetails {
   @include transition-duration(400ms);
 }
-.position-top {
-  #waymap {
-    @include transform(translateY(0));
-  }
-  #waylist {
-    @include transform(translateY(100%));
-  }
-}
-.position-bottom {
-  #waymap {
-    @include transform(translateY(-100%));
-  }
-  #waylist {
-    @include transform(translateY(0));
-  }
-}
 /* Handle the details view sidescroll */
-#waybrowser {
+#waylist {
   //@include transform(translateX(0));
   opacity: 1;
 }
 .show-details {
-  #waybrowser {
+  #waylist {
     //@include transform(translateX(-100%));
     opacity: 0;
   }

@@ -1,11 +1,14 @@
-<div class="resource-content" ng-if="status == 'success'" ng-transclude></div>
-<div class="resource-load-failed" ng-if="status == 'fail'" ng-click="onReload()">
+<div class="resource-content"></div> 
+<div class="resource-not-found" ng-if="status == 'notfound'">
   <h2>We're sorry!</h2>
   <p>
-  This content failed to load.
-  <a ng-if="onReload" ng-click="onReload()">
-  Click here to reload.
-  </a>
+  The requested information was not found on our servers.
+  </p>
+</div>
+<div class="resource-load-failed" ng-if="status == 'fail'" ng-click="reloadFn()">
+  <h2>We're sorry!</h2>
+  <p>
+  This content failed to load. You can click to reload.
   </p>
 </div>
 <div class="animated fading resource-loading" ng-if="status == 'loading'">

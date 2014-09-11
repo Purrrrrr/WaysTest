@@ -1,6 +1,6 @@
 <!-- Way list -->
 <div id="waylist" ng-controller="WayListController" class="app-view animated">
-  <div show-resource-status="waysPromise" on-reload="load()" class="waylist">
+  <div resource-loader="loadWays" load-into-model="ways" class="waylist">
     <div ng-repeat="way in ways" ng-click="gotoWay(way)" class="waylist-item">
       <way name="way.name"></way>
       <div class="way-place">{{way.place}}</div>

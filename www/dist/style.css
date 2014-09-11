@@ -64,23 +64,9 @@ html, body {
   background: url(../images/splash_screen_logo.png) no-repeat center center;
   background-size: contain; }
 
-.waysearch {
-  background: black;
-  height: 40px;
-  padding: 5px; }
-  .waysearch input {
-    display: block;
-    background: #363636 no-repeat url(../images/search.png) 11px center;
-    font-size: 16px;
-    color: white;
-    height: 30px;
-    width: 100%;
-    padding: 10px 10px 5px 50px;
-    border: none; }
-
 .waylist {
   position: absolute;
-  top: 40px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -115,9 +101,6 @@ html, body {
   overflow: auto; }
   #waydetails section {
     text-align: center;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
     padding: 20px 0;
     font-size: 14px; }
   #waydetails section + section {
@@ -130,8 +113,7 @@ html, body {
     font-weight: normal;
     margin: 0; }
   #waydetails .placeDetails {
-    height: 15%;
-    margin: 2px 0; }
+    height: 15%; }
   #waydetails .way {
     margin: 0 auto; }
   #waydetails .wayDetails {
@@ -326,6 +308,9 @@ html, body {
 
 .ways-y {
   color: #219646; }
+
+.resource-content {
+  height: 100%; }
 
 .resource-load-failed {
   position: absolute;

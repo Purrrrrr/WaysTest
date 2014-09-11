@@ -61,18 +61,10 @@ module.exports = function(grunt) {
         }
       }
     },
-    watch: {
-      files: [
-        '<%= jshint.files %>', 
-        '<%= project.src %>/scss/**/*.scss',
-        '<%= project.js.base_libs %>',
-        '<%= project.js.angular_libs %>',
-      ],
-      tasks: ['default']
-    },
     fastWatch: {
       all: {
         dir: '.',
+        ignoreSubDir: ['www/dist'],
         trigger: {
           server: {
             care: ["*.js","*.scss"],

@@ -10,7 +10,7 @@
  * a loading screen appears.
  *
  * @param {expression} resourceLoader An expression that should return a promise giving the data from the resource being loaded.
- * @param {string} model The name of the model to bind the results of the resource loading to.
+ * @param {string} loadIntoModel The name to bind the results of the resource loading to. The results are bound by default to the parent scope of the directive.
  */
 theWaysApp.directive('resourceLoader', ['$q', function($q) {
 

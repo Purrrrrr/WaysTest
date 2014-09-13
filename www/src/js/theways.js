@@ -1,5 +1,5 @@
 var theWaysApp = angular.module('theways', 
-  ['ngAnimate', 'ngTouch', 'ui.router', 'uiGmapgoogle-maps', 'ParseServices', 'ngCordova']);
+  ['ngAnimate', 'ngTouch', 'ui.router', 'uiGmapgoogle-maps', 'ParseServices', 'ngCordova','ionic']);
 
 theWaysApp.config(
        ['$stateProvider', '$urlRouterProvider', 
@@ -11,6 +11,34 @@ function($stateProvider,   $urlRouterProvider) {
   .state('splash', {
     url: "/splash",
     templateUrl: "partials/splashscreen.html"
+  })
+  .state('test', {
+    url: "/test",
+    templateUrl: "partials/test.html"
+  })
+  .state('test.a', {
+    url: "/a",
+    views: {
+      testA: {
+        template: "aa"
+      }
+    }
+  })
+  .state('test.a.b', {
+    url: "/b",
+    views: {
+      "testB@test": {
+        template: "bb"
+      }
+    }
+  })
+  .state('test.a.b.c', {
+    url: "/c",
+    views: {
+      "testC@test": {
+        template: "cc"
+      }
+    }
   })
   .state('ways', {
     abstract: true,

@@ -14,11 +14,13 @@ module.exports = function(grunt) {
         base_libs: [
           '<%= project.src %>/js/libs/parse/*.js',
           '<%= project.src %>/js/libs/lodash/**/*.js',
-          '<%= project.src %>/js/libs/angular/angular.js'
+          '<%= project.src %>/js/libs/angular/angular.js',
+          '<%= project.src %>/js/libs/ionic/ionic.js'
         ],
         angular_libs: [
           '<%= project.src %>/js/libs/angular-*/**/*.js',
           '<%= project.src %>/js/libs/ng-*/**/*.js',
+          '<%= project.src %>/js/libs/ionic/ionic-angular.js',
         ],
         main: [
           '<%= project.src %>/js/parse.js',

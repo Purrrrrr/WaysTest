@@ -1,5 +1,11 @@
 @import "layout";
 
+.slider-slide {
+  background: white;
+  border: 10px solid gray;
+  color: black;
+}
+
 body {
   background: black url(../images/city.jpg) fixed center top; 
 }
@@ -24,6 +30,9 @@ body {
 }
 
 @import "css-fixes";
+@import "ionic/variables";
+@import "ionic/mixins";
+@import "ionic/slide-box";
 @import "views/splash-view";
 @import "views/browse-view";
 @import "views/details-view";

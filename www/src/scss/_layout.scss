@@ -2,7 +2,6 @@ $headerHeight: 55px;
 
 body {
   background: black;
-  color: white;
   overflow: hidden;
   font-family: sans-serif;
 }
@@ -25,6 +24,7 @@ nav {
 }
 
 #contents {
+  color: white;
   height: 100%;
   width: 100%;
   overflow: hidden;

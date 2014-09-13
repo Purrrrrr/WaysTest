@@ -25,11 +25,6 @@ nav {
   position: relative;
   border-top: 55px solid transparent; }
 
-.slider-slide {
-  background: white;
-  border: 10px solid gray;
-  color: black; }
-
 body {
   background: black url(../images/city.jpg) fixed center top; }
 
@@ -250,51 +245,6 @@ html, body {
   -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-
-/* Layout animations */
-#waylist, #waybrowser, #waydetails {
-  transition-duration: 400ms;
-  -webkit-transition-duration: 400ms; }
-
-/* Handle the details view sidescroll */
-#waylist {
-  opacity: 1; }
-
-.show-details #waylist {
-  opacity: 0; }
-
-#waydetails.ng-leave.ng-leave-active {
-  transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -webkit-transform: translateX(100%); }
-#waydetails.ng-enter {
-  transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -webkit-transform: translateX(100%); }
-#waydetails.ng-hide-add.ng-hide-add-active {
-  transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -webkit-transform: translateX(100%); }
-#waydetails.ng-hide-remove {
-  transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -webkit-transform: translateX(100%); }
-#waydetails.ng-enter.ng-enter-active {
-  transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0); }
-#waydetails.ng-leave {
-  transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0); }
-#waydetails.ng-hide-add {
-  transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0); }
-#waydetails.ng-hide-remove.ng-hide-remove-active {
-  transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0); }
 
 .fading {
   transition-duration: 400ms;

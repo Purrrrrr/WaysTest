@@ -12,34 +12,6 @@ function($stateProvider,   $urlRouterProvider) {
     url: "/splash",
     templateUrl: "partials/splashscreen.html"
   })
-  .state('test', {
-    url: "/test",
-    templateUrl: "partials/test.html"
-  })
-  .state('test.a', {
-    url: "/a",
-    views: {
-      testA: {
-        template: "aa"
-      }
-    }
-  })
-  .state('test.a.b', {
-    url: "/b",
-    views: {
-      "testB@test": {
-        template: "bb"
-      }
-    }
-  })
-  .state('test.a.b.c', {
-    url: "/c",
-    views: {
-      "testC@test": {
-        template: "cc"
-      }
-    }
-  })
   .state('ways', {
     abstract: true,
     url: "/ways",
@@ -47,6 +19,12 @@ function($stateProvider,   $urlRouterProvider) {
   })
   .state('ways.list', {
     url: "/list",
+    views: {
+      "list@ways": {
+        controller: 'WayListController',
+        templateUrl: "partials/way-list.html",
+      }
+    }
   })
   .state('ways.list.way', {
     url: "/way/:wayId",

@@ -1,12 +1,6 @@
-<!-- Way list -->
-<div id="waylist" ng-controller="WayListController" class="app-view animated">
-  <div resource-loader="loadWays" load-into-model="ways" class="waylist">
-    <div ng-repeat="way in ways" ng-click="gotoWay(way)" class="waylist-item">
-      <way name="way.name"></way>
-      <div class="way-place">{{way.place}}</div>
-      <div class="way-distance">{{way.distance}} m</div>
-    </div>
-  </div>
-</div>
-<!-- Details -->
-<div ng-swipe-right="goUp();" ui-view="details" id="waydetails" class="animated app-view"></div>
+<ion-slide-box class="app-view">
+  <!-- Way list -->
+  <ion-slide ui-view-slide="list"></ion-slide>
+  <!-- Details -->
+  <ion-slide ui-view-slide="details" id="waydetails"></ion-slide>
+</ion-slide-box>

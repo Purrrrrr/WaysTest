@@ -14,30 +14,6 @@
   transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Layout animations */
-#waylist, #waybrowser, #waydetails {
-  @include transition-duration(400ms);
-}
-/* Handle the details view sidescroll */
-#waylist {
-  //@include transform(translateX(0));
-  opacity: 1;
-}
-.show-details {
-  #waylist {
-    //@include transform(translateX(-100%));
-    opacity: 0;
-  }
-}
-#waydetails {
-  @include hidden-state {
-    @include transform(translateX(100%));
-  }
-  @include shown-state {
-    @include transform(translateX(0));
-  }
-}
-
 .fading {
   @include transition-duration(400ms);
   @include hidden-state {

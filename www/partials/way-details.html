@@ -31,7 +31,7 @@
     <div class="share-email"></div>
   </section>
   <section ng-if="mapCenter" class="map">
-    <ui-gmap-google-map pan="true" draggable="true" grayscale center="mapCenter" zoom="15">
+    <ui-gmap-google-map undraggable pan="true" draggable="true" grayscale center="mapCenter" zoom="15">
       <ui-gmap-marker icon="'images/way-icon.png'" coords="way.position" idKey="way.id"></ui-gmap-marker>
     </ui-gmap-google-map>
   </section>

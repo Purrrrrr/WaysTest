@@ -1,5 +1,24 @@
-theWaysApp.directive('uiViewSlide', ['$ionicSlideBoxDelegate', '$rootScope', '$state', '$timeout', '$compile', function($ionicSlideBoxDelegate, $rootScope, $state, $timeout, $compile) {
-
+/**
+ * @ngdoc directive
+ * @name uiViewSlide
+ * @restrict A
+ *
+ * @description
+ * The `uiViewSlide` directive links an ionSlide element to a uiView
+ * so that state changes show and hide the slides corresponding
+ * to the used and unused views.
+ *
+ * The linking also changes to the corresponding state when 
+ * a slide containing a view from that state is activated.
+ *
+ * This can be used to build a slidable navigation pane for
+ * a group of states.
+ *
+ * @param {string} uiViewSlide The name to give to the contained uiView directive.
+ */
+theWaysApp.directive('uiViewSlide', ['$rootScope', '$state', '$timeout', '$compile', function($rootScope, $state, $timeout, $compile) {
+  
+  //Enumerate through all the states to get a map of them
   var states = {};
   angular.forEach($state.get(), function(state) {
     states[state.name] = state;
@@ -25,6 +44,7 @@ theWaysApp.directive('uiViewSlide', ['$ionicSlideBoxDelegate', '$rootScope', '$s
   }
 
   return {
+    restrict: 'A', 
     transclude: 'element',
     require: ['^ionSlideBox'],
     priority: 600,
@@ -61,7 +81,8 @@ theWaysApp.directive('uiViewSlide', ['$ionicSlideBoxDelegate', '$rootScope', '$s
       function switchToThis() {
         slider.slide(getSlideNum());
       }
-
+      
+      //The function that generates and destroys the slides and views
       function updateStatus(newState) {
         //console.log(newState);
         if (isViewActive(newState, true)) {

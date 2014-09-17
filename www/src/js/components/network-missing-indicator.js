@@ -1,4 +1,12 @@
-//A small HTML snippet that shows when the device is offline
+/**
+ * @ngdoc directive
+ * @name networkMissingIndicator
+ * @restrict E
+ *
+ * @description
+ * The `networkMissingIndicator` directive displays a small notice HTML snippet when the device is offline.
+ *
+ */
 theWaysApp.directive('networkMissingIndicator',
 ['OnlineStatusService', '$animate',
 function(OnlineStatusService, $animate) {

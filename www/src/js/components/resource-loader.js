@@ -4,9 +4,9 @@
  * @restrict EA
  *
  * @description
- * The `resourceLoader` that loads a resource using a function parameter 
- * given to it and on success makes it available to its contents.
- * On failure an error screen is shown and while the resource is loading
+ * The `resourceLoader` directive loads a resource using a function parameter 
+ * given to it and on success makes it available to the scope and the directives within it.
+ * On a network failure an error screen is shown and while the resource is loading
  * a loading screen appears.
  *
  * @param {expression} resourceLoader An expression that should return a promise giving the data from the resource being loaded.

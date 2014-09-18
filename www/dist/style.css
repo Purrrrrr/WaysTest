@@ -286,14 +286,38 @@ html, body {
   #way_details .way-info .way-circle {
     height: 100%;
     margin: 0 auto; }
-    #way_details .way-info .way-circle h1 {
-      font-size: 2em; }
+    #way_details .way-info .way-circle .waytype {
+      top: 20%;
+      font-size: 2.4em; }
+    #way_details .way-info .way-circle .description {
+      position: absolute;
+      top: 55%;
+      left: 0;
+      right: 0;
+      font-size: 0.75em; }
+    #way_details .way-info .way-circle .share {
+      position: absolute;
+      top: 76%;
+      left: 0;
+      right: 0;
+      text-transform: uppercase;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 0.9em; }
+  #way_details .way-info .comments {
+    font-size: 0.8em;
+    font-weight: bold;
+    font-style: italic;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 7%; }
 #way_details .place-info {
   background: #faba4f;
   height: 45%; }
   #way_details .place-info h1 {
     position: absolute;
-    top: 22%;
+    top: 12%;
     left: 0%;
     width: 100%;
     font-size: 1.5em;
@@ -301,11 +325,14 @@ html, body {
     text-transform: uppercase; }
   #way_details .place-info .description {
     position: absolute;
+    top: 33%;
     bottom: 10%;
-    left: 12%;
-    right: 12%;
+    left: 0;
+    right: 0;
+    padding: 0 12%;
     font-style: italic;
-    font-weight: bold; }
+    font-weight: bold;
+    overflow: auto; }
 
 .waylist {
   position: absolute;
@@ -519,8 +546,9 @@ html, body {
     position: absolute;
     left: 0;
     right: 0;
-    top: 25%;
+    top: 45%;
     margin: 0;
+    text-transform: uppercase;
     font-style: italic;
     font-weight: bold; }
 

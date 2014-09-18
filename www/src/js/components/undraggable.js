@@ -14,7 +14,7 @@ theWaysApp.directive('undraggable',
     priority: 100,
     link: function postLink(originalScope, iElement, iAttrs) {
       //var events = ['mousedown', 'touchstart', 'touchmove', 'mousemove', 'touchend', 'mouseup'];
-      var events = 'touchstart mousedown';
+      var events = 'touchstart mousedown touchend mouseup';
       iElement.on(events, function(e) {
         e.stopPropagation();
       });

@@ -1,20 +1,21 @@
 /**
  * @ngdoc directive
- * @name way
+ * @name wayCircle
  * @restrict E
  *
  * @description
- * The `way` directive displays the icon and name of a way.
- * @param {string} name The name of the way
+ * The `wayCircle` directive displays the icon and circle of a way.
  *
  */
 theWaysApp.directive('wayCircle', function() {
   return {       
     restrict: 'E', 
+    scope: {
+    },
+    transclude: true,
     /*scope: {
       name: "="
     },*/
-    transclude: true,
     templateUrl: "partials/components/way-circle.html",
     link: function postLink(scope, iElement, iAttrs) {
       /*

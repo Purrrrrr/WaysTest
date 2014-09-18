@@ -1,2 +1,12 @@
-List
-<a ui-sref="districts.list.way">Way info</a>
+
+<div id="way-list" class="app-view">
+  <h1>Kallio</h1>
+  <div class="border"></div>
+  <div ng-repeat="way in [1,2,3]" ui-sref="districts.list.way" class="list-item">
+    <way-circle>
+    </way-circle>
+    <div class="name">
+      Cafe talo
+    </div>
+  </div>
+</div>

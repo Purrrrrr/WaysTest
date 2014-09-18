@@ -1,0 +1,12 @@
+$ways_green: #00ab51;
+$ways_red: #ef5945;
+$ways_yellow: #faba4f;
+
+@mixin heading-font() {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+@mixin paragraph-font() {
+  font-weight: bold;
+  font-style: italic;
+}

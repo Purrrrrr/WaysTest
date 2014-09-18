@@ -1,0 +1,82 @@
+#way {
+  //overflow: auto;
+  .pic {
+    position: relative;
+    z-index: 10;
+    height: 27%;
+    width: 46%;
+    background: url(../images/testpic.jpg);
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .place-info {
+    position: absolute;
+    left: 0;
+    top: 27%;
+    width: 46%;
+    height: 73%;
+    background: $ways_yellow;
+    
+    h1 {
+      position: absolute;
+      left: 28%;
+      top: 5%;
+      margin: 0;
+      text-transform: uppercase;
+      line-height: 0.9;
+    }
+    .description {
+      position: absolute;
+      left: 10%;
+      right: 10%;
+      bottom: 10%;
+      text-align: center;
+      font-size: 0.6em;
+      @include paragraph-font;
+
+    }
+  }
+  .way-info {
+    background: $ways_green;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 65%;
+    width: 72%;
+
+    .way-circle {
+      position: absolute;
+      top: 19%;
+      left: -3%;
+      height: 64%;
+      z-index: 20;
+      .waytype {
+        top: 35%;
+        font-size: 3em;
+      }
+    }
+    .description {
+      position: absolute;
+      bottom: 5%;
+      right: 0;
+      left: 0;
+      margin: 0;
+      text-align: center;
+      font-size: 0.7em;
+      @include paragraph-font;
+    }
+
+  }
+  .map {
+    position: relative;
+    position: absolute;
+    top: 65%;
+    bottom: 0;
+    right: 0;
+    left: 46%;
+    background: lightgray;
+  }
+}

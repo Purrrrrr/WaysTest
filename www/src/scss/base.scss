@@ -1,12 +1,12 @@
 @import "fonts-and-colors";
 @import "layout";
+@import "css-fixes";
 
 body {
   background: black url(../images/city.jpg) fixed center top; 
   font-family: serif;
 }
 
-@import "css-fixes";
 @import "ionic/variables";
 @import "ionic/mixins";
 @import "ionic/slide-box";

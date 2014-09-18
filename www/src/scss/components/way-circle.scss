@@ -1,4 +1,5 @@
 .way-circle {
+  @include user-select(none);
   text-align: center;
   position: relative;
   color: white;

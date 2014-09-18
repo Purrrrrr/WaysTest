@@ -1,3 +1,8 @@
+@mixin user-select($value) {
+  -webkit-user-select: $value;
+  -ms-user-select: $value;
+  user-select: $value;
+}
 
 /* The base font size shall be about 2.5% of screen height */
 $baseFontPercentage: 4;

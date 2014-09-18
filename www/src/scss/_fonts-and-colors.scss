@@ -2,11 +2,15 @@ $ways_green: #00ab51;
 $ways_red: #ef5945;
 $ways_yellow: #faba4f;
 
-@mixin heading-font() {
+@mixin heading-font($size: 1) {
+  font-family: 'Squada One', cursive;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 400;
+  font-size: 1.1em*$size;
 }
-@mixin paragraph-font() {
-  font-weight: bold;
+@mixin paragraph-font($size: 1) {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
   font-style: italic;
+  font-size: 0.8em*$size;
 }

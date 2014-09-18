@@ -1,34 +1,14 @@
 <div class="app-view" resource-loader="loadWay" load-into-model="way">
-  <section class="placeDetails" ng-click="showPlaceDetails = !showPlaceDetails">
+  <section class="placeDetails">
     <h1>{{way.place}}</h1>
     <p class="placeDetails">{{way.placeDetails}}</p>
   </section>
-  <section ng-show="showPlaceDetails" class="morePlaceDetails animated expanding">
-    <div class="arrow"></div>
-    <div class="animated contents">
-      <p>...</p>
-    </div>
-  </section>
-  <section class="wayDetails" ng-click="showWayDetails = !showWayDetails">
+  <section class="wayDetails">
   <way name="way.name" size="large"></way>
   <p class="wayDescription">
   {{way.description}}
+  <div vertical-text="way.description"></div>
   </p>
-  <p class="wayTime">
-  {{way.endTime}} remaining.
-  </p>
-  </section>
-  <section ng-show="showWayDetails" class="moreWayDetails expanding">
-    <div class="arrow"></div>
-    <div class="animated contents">
-      <p>{{way.details}}</p>
-    </div>
-  </section>
-  <section class="share">
-    <p>share in</p>
-    <div class="share-fb"></div>
-    <div class="share-twitter"></div>
-    <div class="share-email"></div>
   </section>
   <section ng-if="mapCenter" class="map">
     <ui-gmap-google-map undraggable pan="true" draggable="true" grayscale center="mapCenter" zoom="15">

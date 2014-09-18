@@ -24,10 +24,22 @@ nav {
 }
 
 #contents {
-  color: white;
   height: 100%;
   width: 100%;
   overflow: hidden;
   position: relative;
   border-top: $headerHeight solid transparent;
+}
+
+.app-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.ui-view-slide {
+  height: 100%;
+  width: 100%;
 }

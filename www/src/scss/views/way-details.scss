@@ -1,0 +1,57 @@
+#way_details {
+  .way-info, .place-info {
+    text-align: center;
+    position: relative;
+    width: 100%;
+
+    /*
+    @media screen and (orientation: landscape) {
+      & {
+        width: 50%;
+        height: 100% !important;
+        float: left;
+      }
+    }
+    */
+  }
+  .way-info {
+    background: $ways_green;
+    height: 55%;
+    
+    .circle-container {
+      position: absolute;
+      top: 16%;
+      height: 66%;
+      width: 100%;
+    }
+    .way-circle {
+      height: 100%;
+      margin: 0 auto;
+      h1 {
+        font-size: 2em;
+      }
+    }
+  }
+  .place-info {
+    background: $ways_yellow;
+    height: 45%;
+    
+    h1 {
+      position: absolute;
+      top: 22%;
+      left: 0%;
+      width: 100%;
+      font-size: 1.5em;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .description {
+      position: absolute;
+      bottom: 10%;
+      left: 12%;
+      right: 12%;
+      font-style: italic;
+      font-weight: bold;
+    }
+  }
+}

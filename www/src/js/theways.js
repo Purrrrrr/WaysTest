@@ -12,6 +12,49 @@ function($stateProvider,   $urlRouterProvider) {
     url: "/splash",
     templateUrl: "partials/splashscreen.html"
   })
+  .state('districts', {
+    url: "/district",
+    views: {
+      "": {
+        templateUrl: "partials/ways-browser/layout.html"
+      },
+      "districts@districts": {
+        templateUrl: "partials/ways-browser/districts.html",
+      }
+    }
+  })
+  .state('districts.list', {
+    url: "/:districtId",
+    views: {
+      "list@districts": {
+        templateUrl: "partials/ways-browser/way-list.html",
+      }
+    }
+  })
+  .state('districts.list.way', {
+    url: "/way/:wayId",
+    views: {
+      "way@districts": {
+        templateUrl: "partials/ways-browser/way.html",
+      }
+    }
+  })
+  .state('districts.list.way.map_and_pic', {
+    url: "/map_and_pic",
+    views: {
+      "way_details@districts": {
+        templateUrl: "partials/ways-browser/map-and-pic.html",
+      }
+    }
+  })
+  .state('districts.list.way.details', {
+    url: "/details",
+    views: {
+      "way_details@districts": {
+        templateUrl: "partials/ways-browser/way-details.html",
+      }
+    }
+  })
   .state('ways', {
     abstract: true,
     url: "/ways",
@@ -28,7 +71,6 @@ function($stateProvider,   $urlRouterProvider) {
   })
   .state('ways.list.way', {
     url: "/way/:wayId",
-    data: {details: true},
     views: {
       "details@ways": {
         controller: 'WayController',
@@ -42,23 +84,4 @@ function($stateProvider,   $urlRouterProvider) {
   $rootScope.goUp = function() {
     $state.go("^");
   };
-
-  $rootScope.viewClasses = [];
-  $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
-
-    var viewClasses = [];
-    if (toState.data) {
-      if (toState.data.details) {
-        viewClasses.push("show-details");
-      }
-    }
-    $rootScope.viewClasses = viewClasses;
- });
-}])
-.directive("uiView", function() {
-  return {
-    link: function(scope, elem, attrs) {
-      elem.toggleClass("empty-view", elem.children().length === 0);
-    }
-  };
-});
+}]);

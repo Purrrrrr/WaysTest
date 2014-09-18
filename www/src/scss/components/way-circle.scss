@@ -1,0 +1,22 @@
+.way-circle {
+  text-align: center;
+  position: relative;
+  color: white;
+  
+  svg {
+    height: 100%;
+  }
+  circle {
+    fill: black;
+  }
+
+  h1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;
+    margin: 0;
+    font-style: italic;
+    font-weight: bold;
+  }
+}

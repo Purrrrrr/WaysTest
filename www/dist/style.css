@@ -18,20 +18,11 @@ nav {
     right: 11px; }
 
 #contents {
-  color: white;
   height: 100%;
   width: 100%;
   overflow: hidden;
   position: relative;
   border-top: 55px solid transparent; }
-
-body {
-  background: black url(../images/city.jpg) fixed center top; }
-
-.container {
-  position: relative;
-  width: 100%;
-  height: 100%; }
 
 .app-view {
   position: absolute;
@@ -41,8 +32,153 @@ body {
   width: 100%;
   overflow: hidden; }
 
-.empty-view {
-  display: none; }
+.ui-view-slide {
+  height: 100%;
+  width: 100%; }
+
+body {
+  background: black url(../images/city.jpg) fixed center top; }
+
+/* The base font size shall be about 2.5% of screen height */
+@media screen and (min-height: 250px) and (max-height: 300px) {
+  body {
+    font-size: 9.0909090909px; } }
+
+@media screen and (min-height: 300px) and (max-height: 350px) {
+  body {
+    font-size: 10.9090909091px; } }
+
+@media screen and (min-height: 350px) and (max-height: 400px) {
+  body {
+    font-size: 12.7272727273px; } }
+
+@media screen and (min-height: 400px) and (max-height: 450px) {
+  body {
+    font-size: 14.5454545455px; } }
+
+@media screen and (min-height: 450px) and (max-height: 500px) {
+  body {
+    font-size: 16.3636363636px; } }
+
+@media screen and (min-height: 500px) and (max-height: 550px) {
+  body {
+    font-size: 18.1818181818px; } }
+
+@media screen and (min-height: 550px) and (max-height: 600px) {
+  body {
+    font-size: 20px; } }
+
+@media screen and (min-height: 600px) and (max-height: 650px) {
+  body {
+    font-size: 21.8181818182px; } }
+
+@media screen and (min-height: 650px) and (max-height: 700px) {
+  body {
+    font-size: 23.6363636364px; } }
+
+@media screen and (min-height: 700px) and (max-height: 750px) {
+  body {
+    font-size: 25.4545454545px; } }
+
+@media screen and (min-height: 750px) and (max-height: 800px) {
+  body {
+    font-size: 27.2727272727px; } }
+
+@media screen and (min-height: 800px) and (max-height: 850px) {
+  body {
+    font-size: 29.0909090909px; } }
+
+@media screen and (min-height: 850px) and (max-height: 900px) {
+  body {
+    font-size: 30.9090909091px; } }
+
+@media screen and (min-height: 900px) and (max-height: 950px) {
+  body {
+    font-size: 32.7272727273px; } }
+
+@media screen and (min-height: 950px) and (max-height: 1000px) {
+  body {
+    font-size: 34.5454545455px; } }
+
+@media screen and (min-height: 1000px) and (max-height: 1050px) {
+  body {
+    font-size: 36.3636363636px; } }
+
+@media screen and (min-height: 1050px) and (max-height: 1100px) {
+  body {
+    font-size: 38.1818181818px; } }
+
+@media screen and (min-height: 1100px) and (max-height: 1150px) {
+  body {
+    font-size: 40px; } }
+
+@media screen and (min-height: 1150px) and (max-height: 1200px) {
+  body {
+    font-size: 41.8181818182px; } }
+
+@media screen and (min-height: 1200px) and (max-height: 1250px) {
+  body {
+    font-size: 43.6363636364px; } }
+
+@media screen and (min-height: 1250px) and (max-height: 1300px) {
+  body {
+    font-size: 45.4545454545px; } }
+
+@media screen and (min-height: 1300px) and (max-height: 1350px) {
+  body {
+    font-size: 47.2727272727px; } }
+
+@media screen and (min-height: 1350px) and (max-height: 1400px) {
+  body {
+    font-size: 49.0909090909px; } }
+
+@media screen and (min-height: 1400px) and (max-height: 1450px) {
+  body {
+    font-size: 50.9090909091px; } }
+
+@media screen and (min-height: 1450px) and (max-height: 1500px) {
+  body {
+    font-size: 52.7272727273px; } }
+
+@media screen and (min-height: 1500px) and (max-height: 1550px) {
+  body {
+    font-size: 54.5454545455px; } }
+
+@media screen and (min-height: 1550px) and (max-height: 1600px) {
+  body {
+    font-size: 56.3636363636px; } }
+
+@media screen and (min-height: 1600px) and (max-height: 1650px) {
+  body {
+    font-size: 58.1818181818px; } }
+
+@media screen and (min-height: 1650px) and (max-height: 1700px) {
+  body {
+    font-size: 60px; } }
+
+@media screen and (min-height: 1700px) and (max-height: 1750px) {
+  body {
+    font-size: 61.8181818182px; } }
+
+@media screen and (min-height: 1750px) and (max-height: 1800px) {
+  body {
+    font-size: 63.6363636364px; } }
+
+@media screen and (min-height: 1800px) and (max-height: 1850px) {
+  body {
+    font-size: 65.4545454545px; } }
+
+@media screen and (min-height: 1850px) and (max-height: 1900px) {
+  body {
+    font-size: 67.2727272727px; } }
+
+@media screen and (min-height: 1900px) and (max-height: 1950px) {
+  body {
+    font-size: 69.0909090909px; } }
+
+@media screen and (min-height: 1950px) and (max-height: 2000px) {
+  body {
+    font-size: 70.9090909091px; } }
 
 html, body {
   height: 100%;
@@ -50,7 +186,8 @@ html, body {
   padding: 0;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  line-height: 1.1; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
@@ -107,6 +244,68 @@ html, body {
   width: 80%;
   background: url(../images/splash_screen_logo.png) no-repeat center center;
   background-size: contain; }
+
+#map_and_pic .picture, #map_and_pic .map {
+  width: 100%;
+  height: 50%; }
+  @media screen and (orientation: landscape) {
+    #map_and_pic .picture, #map_and_pic .map {
+      width: 50%;
+      height: 100%;
+      float: left; } }
+#map_and_pic .picture {
+  background: url(../images/testpic.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+#map_and_pic .map {
+  background: lightgray; }
+
+#way_details .way-info, #way_details .place-info {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  /*
+    @media screen and (orientation: landscape) {
+      & {
+        width: 50%;
+        height: 100% !important;
+        float: left;
+      }
+    }
+    */ }
+#way_details .way-info {
+  background: #00ab51;
+  height: 55%; }
+  #way_details .way-info .circle-container {
+    position: absolute;
+    top: 16%;
+    height: 66%;
+    width: 100%; }
+  #way_details .way-info .way-circle {
+    height: 100%;
+    margin: 0 auto; }
+    #way_details .way-info .way-circle h1 {
+      font-size: 2em; }
+#way_details .place-info {
+  background: #faba4f;
+  height: 45%; }
+  #way_details .place-info h1 {
+    position: absolute;
+    top: 22%;
+    left: 0%;
+    width: 100%;
+    font-size: 1.5em;
+    margin: 0;
+    text-transform: uppercase; }
+  #way_details .place-info .description {
+    position: absolute;
+    bottom: 10%;
+    left: 12%;
+    right: 12%;
+    font-style: italic;
+    font-weight: bold; }
 
 .waylist {
   position: absolute;
@@ -307,6 +506,23 @@ html, body {
 
 .ways-y {
   color: #219646; }
+
+.way-circle {
+  text-align: center;
+  position: relative;
+  color: white; }
+  .way-circle svg {
+    height: 100%; }
+  .way-circle circle {
+    fill: black; }
+  .way-circle h1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;
+    margin: 0;
+    font-style: italic;
+    font-weight: bold; }
 
 .resource-content {
   height: 100%; }

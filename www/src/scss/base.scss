@@ -1,26 +1,11 @@
 @import "layout";
 
+$ways_green: #00ab51;
+$ways_red: #ef5945;
+$ways_yellow: #faba4f;
+
 body {
   background: black url(../images/city.jpg) fixed center top; 
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.app-view {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-
-.empty-view {
-  display: none;
 }
 
 @import "css-fixes";
@@ -28,9 +13,17 @@ body {
 @import "ionic/mixins";
 @import "ionic/slide-box";
 @import "views/splash-view";
+@import "views/districts";
+@import "views/list";
+@import "views/way";
+@import "views/map_and_pic";
+@import "views/way-details";
+
+
 @import "views/browse-view";
 @import "views/details-view";
 @import "animations";
 @import "components/way-icon";
+@import "components/way-circle";
 @import "components/resource-loader";
 @import "components/network-missing-indicator";

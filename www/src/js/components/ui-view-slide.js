@@ -92,7 +92,7 @@ theWaysApp.directive('uiViewSlide', ['$rootScope', '$state', '$timeout', '$compi
               var viewScope = scope.$new();
               contentBlock = clone;
               element.after(clone);
-              $compile('<div ui-view="'+name+'"></div>')(viewScope, function(viewElem, viewScope) {
+              $compile('<div class="ui-view-slide" ui-view="'+name+'"></div>')(viewScope, function(viewElem, viewScope) {
                 clone.append(viewElem);
               });
               slider.update();

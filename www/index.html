@@ -12,9 +12,14 @@
 </head>
 <body ng-app="theways">
   <network-missing-indicator></network-missing-indicator>
-  <nav>
-    <img class="logo" alt="The ways" src="images/logo_for_menu.png" />
-  </nav>
+  <top-menu>
+    <section class="top-menu-content">
+      <p>logout goes here</p>
+    </section>
+    <nav top-menu-handle>
+      <img class="logo" alt="The ways" src="images/logo_for_menu.png" />
+    </nav>
+  </top-menu>
   <div ui-view id="contents" class="animated fading">
   </div>
   <!--<script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>-->

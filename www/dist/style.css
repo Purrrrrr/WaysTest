@@ -3,6 +3,13 @@ body {
   overflow: hidden;
   font-family: sans-serif; }
 
+.top-menu-content {
+  width: 100%;
+  padding: 15%;
+  background: black;
+  color: white;
+  z-index: 10; }
+
 nav {
   position: absolute;
   top: 0;
@@ -37,7 +44,8 @@ nav {
   width: 100%; }
 
 body {
-  background: black url(../images/city.jpg) fixed center top; }
+  background: black url(../images/city.jpg) fixed center top;
+  font-family: serif; }
 
 /* The base font size shall be about 2.5% of screen height */
 @media screen and (min-height: 250px) and (max-height: 300px) {

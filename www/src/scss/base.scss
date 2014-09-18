@@ -6,6 +6,7 @@ $ways_yellow: #faba4f;
 
 body {
   background: black url(../images/city.jpg) fixed center top; 
+  font-family: serif;
 }
 
 @import "css-fixes";
@@ -23,6 +24,7 @@ body {
 @import "views/browse-view";
 @import "views/details-view";
 @import "animations";
+@import "components/top-menu";
 @import "components/way-icon";
 @import "components/way-circle";
 @import "components/resource-loader";

@@ -363,6 +363,12 @@ body {
   right: 0;
   left: 46%;
   background: lightgray; }
+  #way .map .angular-google-map-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0; }
 
 #map_and_pic {
   -webkit-user-select: none;
@@ -384,7 +390,14 @@ body {
     -o-background-size: cover;
     background-size: cover; }
   #map_and_pic .map {
-    background: lightgray; }
+    background: lightgray;
+    position: relative; }
+    #map_and_pic .map .angular-google-map-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0; }
 
 #way_details .way-info, #way_details .place-info {
   text-align: center;

@@ -36,6 +36,17 @@ function($stateProvider,   $urlRouterProvider) {
     views: {
       "way@districts": {
         templateUrl: "partials/ways-browser/way.html",
+        controller: ['$scope', function($scope) {
+          $scope.mapCenter = {
+            "latitude":60.167466999999995,"longitude":24.929533000000003
+          };
+          $scope.way = {
+            position:  {
+              "latitude":60.167466999999995,"longitude":24.929533000000003
+            },
+            id: 2
+          };
+        }]
       }
     }
   })
@@ -44,6 +55,17 @@ function($stateProvider,   $urlRouterProvider) {
     views: {
       "way_details@districts": {
         templateUrl: "partials/ways-browser/map-and-pic.html",
+        controller: ['$scope', function($scope) {
+          $scope.mapCenter = {
+            "latitude":60.167466999999995,"longitude":24.929533000000003
+          };
+          $scope.way = {
+            position:  {
+              "latitude":60.167466999999995,"longitude":24.929533000000003
+            },
+            id: 2
+          };
+        }]
       }
     }
   })

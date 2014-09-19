@@ -14,6 +14,7 @@ theWaysApp.directive('topMenu', [function() {
       var element = $element[0];
       var contents = null;
       var handle = null;
+      var bg = null;
       var menuOpen = false;
       var originalTranslation = 0;
       var transition;
@@ -161,12 +162,16 @@ theWaysApp.directive('topMenu', [function() {
         speed = speed || 0;
         translate(contents, pos, speed);
         translate(handle, pos, speed);
+        translate(bg, pos-elemHeight(contents), speed);
       }
       this.registerContents = function(elem) {
         contents = elem;
       };
       this.registerHandle = function(elem) {
         handle = elem;
+      };
+      this.registerBg = function(elem) {
+        bg = elem;
       };
       element.addEventListener("mousedown", eventHandler);
       element.addEventListener("touchstart", eventHandler);
@@ -175,6 +180,14 @@ theWaysApp.directive('topMenu', [function() {
       transcludeFn(scope, function(cloned) {
         element.append(cloned);
       });
+      var bg = angular.element("<div class='blackground'></div>");
+      element.append(bg);
+      var styles = bg[0].style;
+      styles.position = "absolute";
+      styles.bottom = "100%";
+      styles.width = "100%";
+      styles.height = 1000+"px";
+      ctrl.registerBg(bg[0]);
     }
   };
 }]);

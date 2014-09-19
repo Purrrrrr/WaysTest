@@ -1,0 +1,38 @@
+#districts {
+  overflow: auto;
+}
+.district {
+  width: 100%;
+  height: 21%;
+  clear: both;
+  text-align: center;
+  @include heading-font(2.5);
+  line-height: 1.8;
+
+  &.transparent {
+    @include paragraph-font(3);
+  }
+  &.small {
+    width: 50%;
+    float: left;
+    clear: none;
+    @include heading-font(1.5);
+    line-height: 2.8;
+  }
+  &.transparent.small {
+    @include paragraph-font(1.5);
+    line-height: 1.8*2;
+  }
+  &.green {
+    background: $ways_green;
+    color: white;
+  }
+  &.yellow {
+    background: $ways_yellow;
+    color: white;
+  }
+  &.red {
+    background: $ways_red;
+    color: white;
+  }
+}

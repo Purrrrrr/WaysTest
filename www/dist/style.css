@@ -257,6 +257,49 @@ body {
   background: url(../images/logo_for_menu.png) no-repeat center center;
   background-size: contain; }
 
+#districts {
+  overflow: auto; }
+
+.district {
+  width: 100%;
+  height: 21%;
+  clear: both;
+  text-align: center;
+  font-family: 'Squada One', cursive;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 2.75em;
+  line-height: 1.8; }
+  .district.transparent {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2.4em; }
+  .district.small {
+    width: 50%;
+    float: left;
+    clear: none;
+    font-family: 'Squada One', cursive;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.65em;
+    line-height: 2.8; }
+  .district.transparent.small {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.2em;
+    line-height: 3.6; }
+  .district.green {
+    background: #00ab51;
+    color: white; }
+  .district.yellow {
+    background: #faba4f;
+    color: white; }
+  .district.red {
+    background: #ef5945;
+    color: white; }
+
 #way-list > h1 {
   font-family: 'Squada One', cursive;
   text-transform: uppercase;

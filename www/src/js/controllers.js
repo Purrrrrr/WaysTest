@@ -29,9 +29,10 @@ function($scope, wayData) {
 theWaysApp.controller('WayDetailController',
        ['$scope', 'wayData',
 function($scope, wayData) {
-  wayData.loader.then(function(way) {
-    $scope.way = way;
-    $scope.mapCenter = _.clone(way.position);
-    return way;
-  });
+  $scope.loadWay = function() {
+    return wayData.loader.then(function(way) {
+      $scope.mapCenter = _.clone(way.position);
+      return way;
+    });
+  };
 }]);

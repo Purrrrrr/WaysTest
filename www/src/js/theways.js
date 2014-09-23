@@ -34,20 +34,20 @@ function($stateProvider,   $urlRouterProvider) {
   })
   .state('districts.list.way', {
     url: "/way/:wayId",
+    resolve: {
+      wayData: ['$stateParams', 'WaysService', function($stateParams, WaysService) {
+        var wayId = $stateParams.wayId;
+        var wayData = {
+          id: wayId,
+          loader: WaysService.getWay(wayId)
+        };
+        return wayData;
+      }]
+    },
     views: {
       "way@districts": {
         templateUrl: "partials/ways-browser/way.html",
-        controller: ['$scope', function($scope) {
-          $scope.mapCenter = {
-            "latitude":60.167466999999995,"longitude":24.929533000000003
-          };
-          $scope.way = {
-            position:  {
-              "latitude":60.167466999999995,"longitude":24.929533000000003
-            },
-            id: 2
-          };
-        }]
+        controller: 'WayController',
       }
     }
   })
@@ -56,17 +56,7 @@ function($stateProvider,   $urlRouterProvider) {
     views: {
       "way_details@districts": {
         templateUrl: "partials/ways-browser/map-and-pic.html",
-        controller: ['$scope', function($scope) {
-          $scope.mapCenter = {
-            "latitude":60.167466999999995,"longitude":24.929533000000003
-          };
-          $scope.way = {
-            position:  {
-              "latitude":60.167466999999995,"longitude":24.929533000000003
-            },
-            id: 2
-          };
-        }]
+        controller: 'WayDetailController'
       }
     }
   })
@@ -75,6 +65,7 @@ function($stateProvider,   $urlRouterProvider) {
     views: {
       "way_details@districts": {
         templateUrl: "partials/ways-browser/way-details.html",
+        controller: 'WayDetailController'
       }
     }
   })
@@ -101,10 +92,4 @@ function($stateProvider,   $urlRouterProvider) {
       }
     }
   });
-}])
-/* Animation class magik */
-.run(['$rootScope', '$state', function ($rootScope, $state) {
-  $rootScope.goUp = function() {
-    $state.go("^");
-  };
 }]);

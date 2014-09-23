@@ -1,27 +1,19 @@
-<div id="way" class="app-view">
+<div id="way" class="app-view" resource-loader="loadWay" load-into-model="way">
   <div ui-sref="districts.list.way.map_and_pic" class="pic"></div>
   <section ui-sref="districts.list.way.details" class="place-info">
-    <h1>
-      C<br>a<br>f<br>e<br> <br>T<br>a<br>l<br>o<br>
-    </h1>
+    <h1 vertical-text="way.place"></h1>
     <section class="description">
-      Cafe Talo on sopiva sekoitus street baaria, ruokailua, teatteriravintolaa sekä yksityistilaisuuksia. 
+      {{way.placeDetails}}
     </section>
   </section>
   <section ui-sref="districts.list.way.details" class="way-info">
     <way-circle>
     </way-circle>
-    <p class="description">
-      This is such a great way!
-    </p>
+    <p class="description">{{way.description}}</p>
   </section>
   <div ui-sref="districts.list.way.map_and_pic" class="map">
     <ui-gmap-google-map grayscale center="mapCenter" zoom="15">
       <ui-gmap-marker icon="'images/way-icon.png'" coords="way.position" idKey="way.id"></ui-gmap-marker>
     </ui-gmap-google-map>
   </div>
-<!--
-<a >Details</a>
-<a >Map + Pic</a>
--->
 </div>

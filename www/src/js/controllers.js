@@ -17,15 +17,21 @@ function($scope,   $state,   WaysService, $q) {
 
 }]);
 theWaysApp.controller('WayController', 
-       ['$scope', '$state', 'WaysService', 
-function($scope,   $state,   WaysService) {
-  var wayId = $state.params.wayId;
-
+       ['$scope', 'wayData',
+function($scope, wayData) {
   $scope.loadWay = function() {
-    return WaysService.getWay(wayId).then(function(way) {
+    return wayData.loader.then(function(way) {
       $scope.mapCenter = _.clone(way.position);
       return way;
     });
   };
-
+}]);
+theWaysApp.controller('WayDetailController',
+       ['$scope', 'wayData',
+function($scope, wayData) {
+  wayData.loader.then(function(way) {
+    $scope.way = way;
+    $scope.mapCenter = _.clone(way.position);
+    return way;
+  });
 }]);

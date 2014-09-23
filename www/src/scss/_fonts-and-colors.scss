@@ -3,13 +3,19 @@ $ways_red: #ef5945;
 $ways_yellow: #faba4f;
 
 @mixin heading-font($size: 1) {
-  font-family: 'Squada One', cursive;
+  font-family: 'Megrim', cursive;
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 1.1em*$size;
+  font-size: 1.2em*$size;
 }
 @mixin paragraph-font($size: 1) {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Megrim', serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 0.9em*$size;
+}
+@mixin special-font($size: 1) {
+  font-family: 'Playfair Display SC', serif;
   font-weight: 700;
   font-style: italic;
   font-size: 0.8em*$size;

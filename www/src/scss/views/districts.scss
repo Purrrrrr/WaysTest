@@ -8,31 +8,40 @@
   text-align: center;
   @include heading-font(2.5);
   line-height: 1.8;
+  color: white;
 
-  &.transparent {
-    @include paragraph-font(3);
-  }
   &.small {
     width: 50%;
     float: left;
     clear: none;
-    @include heading-font(1.5);
+    @include heading-font(1.6);
     line-height: 2.8;
   }
-  &.transparent.small {
-    @include paragraph-font(1.5);
-    line-height: 1.8*2;
+  &.random,
+  &.closest {
+    background: rgba(0,0,0,0.2);
+    @include paragraph-font(3);
+    line-height: 2.2;
+  }
+  &.closest.small {
+    @include paragraph-font(2.3);
+    line-height: 2.9;
+  }
+  &.random {
+    @include special-font(3);
+    line-height: 2.2;
+  }
+  &.random.small {
+    @include special-font(2.3);
+    line-height: 2.55;
   }
   &.green {
     background: $ways_green;
-    color: white;
   }
   &.yellow {
     background: $ways_yellow;
-    color: white;
   }
   &.red {
     background: $ways_red;
-    color: white;
   }
 }

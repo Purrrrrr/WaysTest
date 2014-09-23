@@ -28,6 +28,7 @@ function($stateProvider,   $urlRouterProvider) {
     views: {
       "list@districts": {
         templateUrl: "partials/ways-browser/way-list.html",
+        controller: 'WayListController',
       }
     }
   })

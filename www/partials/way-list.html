@@ -1,6 +1,6 @@
 <div id="waylist" class="app-view">
   <div resource-loader="loadWays" load-into-model="ways" class="waylist">
-    <div ng-repeat="way in ways" ng-click="gotoWay(way)" class="waylist-item">
+    <div ng-repeat="way in ways" ui-sref="ways.list.way({wayId: way.id})" class="waylist-item">
       <way name="way.name"></way>
       <div class="way-place">{{way.place}}</div>
       <div class="way-distance">{{way.distance}} m</div>

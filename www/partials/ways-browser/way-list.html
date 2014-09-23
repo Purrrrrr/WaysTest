@@ -1,12 +1,13 @@
 
-<div id="way-list" class="app-view">
-  <h1>Kallio</h1>
+<div id="way-list" class="app-view" resource-loader="loadWays" load-into-model="ways" >
+  <h1 class="district-name">{{district.name}}</h1>
   <div class="border"></div>
-  <div ng-repeat="way in [1,2,3]" ui-sref="districts.list.way" class="list-item">
+  <div ng-repeat="way in ways" ui-sref="districts.list.way({wayId: way.id})" class="list-item">
     <way-circle>
+      <!-- TODO: Mark way type here somehow -->
     </way-circle>
     <div class="name">
-      Cafe talo
+      {{way.place}}
     </div>
   </div>
 </div>

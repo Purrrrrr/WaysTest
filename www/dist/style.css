@@ -300,38 +300,40 @@ body {
     background: #ef5945;
     color: white; }
 
-#way-list > h1 {
-  font-family: 'Squada One', cursive;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 3.3em;
-  background: #ef5945;
-  margin: 0;
-  color: white;
-  padding: 5%;
-  text-align: center; }
-#way-list .border {
-  height: 1%;
-  background: black; }
-#way-list .list-item {
-  position: relative;
-  height: 15%;
-  margin: 15% 0; }
-  #way-list .list-item .way-circle {
-    position: absolute;
-    top: 0;
-    left: 8%;
-    height: 100%; }
-  #way-list .list-item .name {
-    font-family: 'Roboto Slab', serif;
-    font-weight: 700;
-    font-style: italic;
-    font-size: 1.04em;
+#way-list {
+  overflow: auto; }
+  #way-list h1.district-name {
+    font-family: 'Squada One', cursive;
     text-transform: uppercase;
-    position: absolute;
-    top: 35%;
-    line-height: 1;
-    left: 45%; }
+    font-weight: 400;
+    font-size: 3.3em;
+    background: #ef5945;
+    margin: 0;
+    color: white;
+    height: 22%;
+    text-align: center;
+    line-height: 1.65; }
+  #way-list .border {
+    height: 1%;
+    background: black; }
+  #way-list .list-item {
+    position: relative;
+    height: 25%; }
+    #way-list .list-item .way-circle {
+      position: absolute;
+      top: 40%;
+      left: 8%;
+      height: 60%; }
+    #way-list .list-item .name {
+      font-family: 'Roboto Slab', serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: 1.04em;
+      text-transform: uppercase;
+      position: absolute;
+      top: 61%;
+      line-height: 1;
+      left: 45%; }
 
 #way .pic {
   position: relative;

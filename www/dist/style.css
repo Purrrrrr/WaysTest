@@ -265,47 +265,47 @@ body {
   height: 21%;
   clear: both;
   text-align: center;
-  font-family: 'Megrim', cursive;
+  font-family: 'Abril Fatface', cursive;
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 3em;
-  line-height: 1.8;
+  font-size: 2.25em;
+  line-height: 2.2;
   color: white; }
   .district.small {
     width: 50%;
     float: left;
     clear: none;
-    font-family: 'Megrim', cursive;
+    font-family: 'Abril Fatface', cursive;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 1.92em;
-    line-height: 2.8; }
+    font-size: 1.44em;
+    line-height: 3.7; }
   .district.transparent, .district.random, .district.closest {
     background: rgba(0, 0, 0, 0.1);
-    font-family: 'Megrim', serif;
+    font-family: 'Abril Fatface', cursive;
     font-weight: 700;
     font-style: italic;
-    font-size: 2.7em;
+    font-size: 2.4em;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     line-height: 2.2; }
   .district.transparent.small, .district.closest.small {
-    font-family: 'Megrim', serif;
+    font-family: 'Abril Fatface', cursive;
     font-weight: 700;
     font-style: italic;
-    font-size: 2.07em;
+    font-size: 1.84em;
     line-height: 2.9; }
   .district.random {
-    font-family: 'Playfair Display SC', serif;
+    font-family: 'Megrim', cursive;
     font-weight: 700;
     font-style: italic;
     font-size: 2.4em;
     line-height: 2.2; }
   .district.random.small {
-    font-family: 'Playfair Display SC', serif;
+    font-family: 'Megrim', cursive;
     font-weight: 700;
     font-style: italic;
     font-size: 1.84em;
-    line-height: 2.55; }
+    line-height: 3.03; }
   .district.green {
     background: #00ab51; }
   .district.yellow {
@@ -316,10 +316,10 @@ body {
 #way-list {
   overflow: auto; }
   #way-list h1.district-name {
-    font-family: 'Megrim', cursive;
+    font-family: 'Abril Fatface', cursive;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 3.6em;
+    font-size: 2.7em;
     background: #ef5945;
     margin: 0;
     color: white;
@@ -338,10 +338,10 @@ body {
       left: 8%;
       height: 60%; }
     #way-list .list-item .name {
-      font-family: 'Megrim', serif;
+      font-family: 'Abril Fatface', cursive;
       font-weight: 700;
       font-style: italic;
-      font-size: 1.17em;
+      font-size: 1.04em;
       text-transform: uppercase;
       position: absolute;
       top: 61%;
@@ -370,10 +370,10 @@ body {
     left: 28%;
     top: 5%;
     margin: 0;
-    font-family: 'Megrim', cursive;
+    font-family: 'Abril Fatface', cursive;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 1.2em;
+    font-size: 0.9em;
     line-height: 0.9; }
   #way .place-info .description {
     position: absolute;
@@ -381,10 +381,10 @@ body {
     right: 10%;
     bottom: 10%;
     text-align: center;
-    font-family: 'Megrim', serif;
+    font-family: 'Abril Fatface', cursive;
     font-weight: 700;
     font-style: italic;
-    font-size: 0.54em; }
+    font-size: 0.48em; }
 #way .way-info {
   background: #00ab51;
   position: absolute;
@@ -408,10 +408,10 @@ body {
     left: 0;
     margin: 0;
     text-align: center;
-    font-family: 'Megrim', serif;
+    font-family: 'Abril Fatface', cursive;
     font-weight: 700;
     font-style: italic;
-    font-size: 0.63em;
+    font-size: 0.56em;
     font-style: normal; }
 #way .map {
   position: relative;
@@ -495,16 +495,16 @@ body {
       top: 76%;
       left: 0;
       right: 0;
-      font-family: 'Playfair Display SC', serif;
+      font-family: 'Megrim', cursive;
       font-weight: 700;
       font-style: italic;
       font-size: 0.72em;
       text-transform: uppercase; }
   #way_details .way-info .comments {
-    font-family: 'Megrim', serif;
+    font-family: 'Abril Fatface', cursive;
     font-weight: 700;
     font-style: italic;
-    font-size: 0.72em;
+    font-size: 0.64em;
     position: absolute;
     left: 0;
     right: 0;
@@ -518,10 +518,10 @@ body {
     left: 0%;
     width: 100%;
     margin: 0;
-    font-family: 'Megrim', cursive;
+    font-family: 'Abril Fatface', cursive;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 1.8em; }
+    font-size: 1.35em; }
   #way_details .place-info .description {
     position: absolute;
     top: 33%;
@@ -529,10 +529,10 @@ body {
     left: 0;
     right: 0;
     padding: 0 12%;
-    font-family: 'Megrim', serif;
+    font-family: 'Abril Fatface', cursive;
     font-weight: 700;
     font-style: italic;
-    font-size: 0.9em;
+    font-size: 0.8em;
     overflow: auto; }
 
 .animated {
@@ -628,10 +628,10 @@ body {
     right: 0;
     top: 35%;
     margin: 0;
-    font-family: 'Megrim', cursive;
+    font-family: 'Abril Fatface', cursive;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 1.2em;
+    font-size: 0.9em;
     font-style: italic; }
 
 .resource-content {

@@ -7,7 +7,7 @@
   clear: both;
   text-align: center;
   @include heading-font(2.5);
-  line-height: 1.8;
+  line-height: 2.2;
   color: white;
 
   &.small {
@@ -15,7 +15,7 @@
     float: left;
     clear: none;
     @include heading-font(1.6);
-    line-height: 2.8;
+    line-height: 3.7;
   }
   &.transparent,
   &.random,
@@ -36,7 +36,7 @@
   }
   &.random.small {
     @include special-font(2.3);
-    line-height: 2.55;
+    line-height: 3.03;
   }
   &.green {
     background: $ways_green;

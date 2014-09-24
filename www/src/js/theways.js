@@ -20,6 +20,7 @@ function($stateProvider,   $urlRouterProvider) {
       },
       "districts@districts": {
         templateUrl: "partials/ways-browser/districts.html",
+        controller: 'DistrictsController',
       }
     }
   })
@@ -66,29 +67,6 @@ function($stateProvider,   $urlRouterProvider) {
       "way_details@districts": {
         templateUrl: "partials/ways-browser/way-details.html",
         controller: 'WayDetailController'
-      }
-    }
-  })
-  .state('ways', {
-    abstract: true,
-    url: "/ways",
-    templateUrl: "partials/browse-ways.html"
-  })
-  .state('ways.list', {
-    url: "/list",
-    views: {
-      "list@ways": {
-        controller: 'WayListController',
-        templateUrl: "partials/way-list.html",
-      }
-    }
-  })
-  .state('ways.list.way', {
-    url: "/way/:wayId",
-    views: {
-      "details@ways": {
-        controller: 'WayController',
-        templateUrl: "partials/way-details.html",
       }
     }
   });

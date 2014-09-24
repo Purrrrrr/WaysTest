@@ -1,25 +1,3 @@
 <div id="districts" class="app-view">
-  <div class="district green" ui-sref="districts.list">Eira</div>
-  <div class="district random small" ui-sref="districts.list">Random</div>
-  <div class="district yellow small" ui-sref="districts.list">Punavuori</div>
-  <div class="district red" ui-sref="districts.list">Kallio</div>
-  <div class="district closest" ui-sref="districts.list">Closest</div>
-  <div class="district green" ui-sref="districts.list">Hakaniemi</div>
-  <div class="district red" ui-sref="districts.list">Vallila</div>
-  <div class="district green small" ui-sref="districts.list">Thing</div>
-  <div class="district yellow small" ui-sref="districts.list">Thang</div>
-  <div class="district red" ui-sref="districts.list">Thung</div>
-  <div class="district green" ui-sref="districts.list">Thing</div>
-  <div class="district red small" ui-sref="districts.list">Thing</div>
-  <div class="district yellow small" ui-sref="districts.list">Thang</div>
-  <div class="district green" ui-sref="districts.list">Thung</div>
-  <div class="district red" ui-sref="districts.list">Vallila</div>
-  <div class="district transparent small" ui-sref="districts.list">Thing</div>
-  <div class="district yellow small" ui-sref="districts.list">Thang</div>
-  <div class="district red" ui-sref="districts.list">Thung</div>
-  <div class="district green" ui-sref="districts.list">Thing</div>
-  <div class="district yellow small" ui-sref="districts.list">Thang</div>
-  <div class="district transparent small" ui-sref="districts.list">Thing</div>
-  <div class="district green" ui-sref="districts.list">Thung</div>
-
+  <div ng-repeat="district in  districts" class="district" ng-class="[district.specialClass, district.color, district.size]" ng-click="district.click()">{{district.name}}</div>
 </div>

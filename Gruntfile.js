@@ -25,8 +25,10 @@ module.exports = function(grunt) {
         main: [
           '<%= project.src %>/js/parse.js',
           '<%= project.src %>/js/theways.js',
+          '<%= project.src %>/js/utils.js',
+          '<%= project.src %>/js/services/**/*.js',
+          '<%= project.src %>/js/controllers.js',
           '<%= project.src %>/js/components/**/*.js',
-          '<%= project.src %>/js/*.js'
         ]
       }
     },

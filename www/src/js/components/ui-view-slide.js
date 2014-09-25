@@ -132,13 +132,14 @@ theWaysApp.directive('uiViewSlide', ['$rootScope', '$state', '$timeout', '$compi
         console.log("Curindex: "+slider.currentIndex());
         console.log("Curnum: " + getSlideNum());
         */
-        if (contentBlock && slider.currentIndex() == getSlideNum()) {
-          var viewData = contentBlock.children().children().data('$uiView');
-          var viewState = viewData && viewData.state && viewData.state.self.name;
-          //console.log(viewData);
-          if (viewState && viewState != $state.current.name) {
-            $state.go(viewState, viewData.state.params);
-          }
+       if (contentBlock && slider.currentIndex() == getSlideNum()) {
+         //Spy on the data used by ui-view to display the views of its states
+         var viewData = contentBlock.children().children().data('$uiView');
+         var viewState = viewData && viewData.state && viewData.state.self.name;
+         //console.log(viewData);
+         if (viewState && viewState != $state.current.name) {
+           $state.go(viewState, viewData.state.params);
+         }
         }
       });
     }

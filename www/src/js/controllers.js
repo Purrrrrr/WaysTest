@@ -1,3 +1,7 @@
+if (typeof Number.prototype.toRadians == 'undefined') {
+  Number.prototype.toRadians = function() { return this * Math.PI / 180; };
+}
+
 theWaysApp.controller('DistrictsController',
        ['$scope', '$state', '$cordovaGeolocation',
 function($scope, $state, $cordovaGeolocation) {
@@ -21,16 +25,16 @@ function($scope, $state, $cordovaGeolocation) {
   });
 
 
-    // begin watching
+  // begin watching
   var watch = $cordovaGeolocation.watchPosition({ frequency: 1000 });
   watch.promise.then(function() { /* Not  used */ },
-    function(err) {
-      // An error occurred.
-    },
-    function(position) {
-      // Active updates of the position here
-      // position.coords.[ latitude / longitude]
-      $scope.position = position.coords.latitude;
+  function(err) {
+    // An error occurred.
+  },
+  function(position) {
+    // Active updates of the position here
+    // position.coords.[ latitude / longitude]
+    $scope.position = position.coords.latitude;
   });
 
   // clear watch
@@ -38,41 +42,42 @@ function($scope, $state, $cordovaGeolocation) {
 
   // example distance formula:
 
- /*   var R = 6371; // km
+  /*   var R = 6371; // km
+   var φ1 = lat1.toRadians();
+   var φ2 = lat2.toRadians();
+   var Δφ = (lat2-lat1).toRadians();
+   var Δλ = (lon2-lon1).toRadians();
+
+   var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+   Math.cos(φ1) * Math.cos(φ2) *
+   Math.sin(Δλ/2) * Math.sin(Δλ/2);
+   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+   var d = R * c; */
+
+  // calc distance
+
+
+  function distance(lat1, lat2, lon1, lon2) {
+    var R = 9371; //km
     var φ1 = lat1.toRadians();
     var φ2 = lat2.toRadians();
     var Δφ = (lat2-lat1).toRadians();
     var Δλ = (lon2-lon1).toRadians();
 
     var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-            Math.cos(φ1) * Math.cos(φ2) *
-            Math.sin(Δλ/2) * Math.sin(Δλ/2);
+    Math.cos(φ1) * Math.cos(φ2) *
+    Math.sin(Δλ/2) * Math.sin(Δλ/2);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
-    var d = R * c; */
-
-    // calc distance
-
-    function distance(lat1, lat2, lon1, lon2) {
-        var R = 9371; //km
-        var φ1 = lat1.toRadians();
-        var φ2 = lat2.toRadians();
-        var Δφ = (lat2-lat1).toRadians();
-        var Δλ = (lon2-lon1).toRadians();
-
-        var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-            Math.cos(φ1) * Math.cos(φ2) *
-            Math.sin(Δλ/2) * Math.sin(Δλ/2);
-        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-
-        var d = R * c;
-        return d;
-    };
+    var d = R * c;
+    return d;
+  }
 
 
   //Temporary list of districts by name. These should come from the backend
   var districtLoc = [
-  {name: 'Eira', lat: '60.156764', longitude: '24.937565'},
+  {name: 'Eira', lat: 60.156764, longitude: 24.937565},
   {name: 'Punavuori'},
   {name: 'Kallio'},
   {name: 'Hakaniemi'},
@@ -156,7 +161,6 @@ function($scope, $state, $cordovaGeolocation) {
   }
 
   $scope.districts = districts;
-  $scope.distanceEira = distance('60.156764', $scope.lat, '24.937565', $scope.longi);
 }]);
 theWaysApp.controller('WayListController',
        ['$scope', '$state', 'WaysService', '$q', '$cordovaGeolocation',
@@ -172,6 +176,7 @@ function($scope,   $state,   WaysService, $q, $cordovaGeolocation) {
   .then(function (position) {
     $scope.lat  = position.coords.latitude;
     $scope.long = position.coords.longitude;
+    $scope.distanceEira = distance(60.156764, $scope.lat, 24.937565, $scope.longi);
   }, function(err) {
     // error
 

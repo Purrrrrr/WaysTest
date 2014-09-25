@@ -25,7 +25,7 @@ function($scope, $state) {
   });
 
   var randomButton = {
-    click: goTo('districts.randomway'),
+    click: goTo('districts.randomWay'),
     specialClass: "random",
     name: "Random" 
   };

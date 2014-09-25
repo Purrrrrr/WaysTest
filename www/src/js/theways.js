@@ -13,7 +13,7 @@ function($stateProvider,   $urlRouterProvider) {
     templateUrl: "partials/splashscreen.html"
   })
   .state('districts', {
-    url: "/district",
+    url: "/ways",
     views: {
       "": {
         templateUrl: "partials/ways-browser/layout.html"
@@ -32,17 +32,15 @@ function($stateProvider,   $urlRouterProvider) {
         controller: 'WayListController',
       }
     }
-  })
-  .state('districts.list.way', {
+  });
+
+  var wayState = {
     url: "/way/:wayId",
     resolve: {
       wayData: ['$stateParams', 'WaysService', function($stateParams, WaysService) {
-        var wayId = $stateParams.wayId;
-        var wayData = {
-          id: wayId,
-          loader: WaysService.getWay(wayId)
+        return {
+          loader: WaysService.getWay($stateParams.wayId)
         };
-        return wayData;
       }]
     },
     views: {
@@ -51,8 +49,8 @@ function($stateProvider,   $urlRouterProvider) {
         controller: 'WayController',
       }
     }
-  })
-  .state('districts.list.way.map_and_pic', {
+  };
+  var wayMapState = {
     url: "/map_and_pic",
     views: {
       "way_details@districts": {
@@ -60,8 +58,8 @@ function($stateProvider,   $urlRouterProvider) {
         controller: 'WayDetailController'
       }
     }
-  })
-  .state('districts.list.way.details', {
+  };
+  var wayDetailsState = {
     url: "/details",
     views: {
       "way_details@districts": {
@@ -69,5 +67,23 @@ function($stateProvider,   $urlRouterProvider) {
         controller: 'WayDetailController'
       }
     }
-  });
+  };
+
+  $stateProvider
+  .state('districts.list.way', wayState)
+  .state('districts.list.way.map_and_pic', wayMapState)
+  .state('districts.list.way.details', wayDetailsState)
+  .state('districts.randomWay', {
+    url: "^/randomWay",
+    resolve: {
+      wayData: ['WaysService', function(WaysService) {
+        return {
+          loader: WaysService.getRandomWay()
+        };
+      }]
+    },
+    views: wayState.views
+  })
+  .state('districts.randomWay.map_and_pic', wayMapState)
+  .state('districts.randomWay.details', wayDetailsState);
 }]);

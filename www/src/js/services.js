@@ -34,6 +34,7 @@ function($cordovaNetwork, $rootScope) {
 }]);
 theWaysApp.service('WaysService', ['ParseSDK', '$q', function(ParseSDK, $q) {
   // TODO: Some caching system could be nice  
+  var self = this;
  
   this.getWays = function(position) {
     var deferred = $q.defer();
@@ -44,6 +45,14 @@ theWaysApp.service('WaysService', ['ParseSDK', '$q', function(ParseSDK, $q) {
     });
 
     return deferred.promise;
+  };
+  this.getRandomWay = function() {
+    return self.getWays({}).then(function(ways) {
+      if (ways.length === 0) {
+        return $q.reject("No ways found");
+      }
+      return ways[_.random(ways.length-1)];
+    });
   };
   this.getWay = function(id, successFunc) {
     var deferred = $q.defer();

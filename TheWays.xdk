@@ -7,7 +7,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "",
       "projectGuid": "b66a3a4f-85e0-48f8-9c14-e3059a50d8cc",
-      "lastModifiedDate": 1409670231598,
+      "lastModifiedDate": 1411628850283,
       "creationDate": 1408124795962
     },
     "sourceDirectory": "www",
@@ -77,12 +77,20 @@
         "selectedState": "Included",
         "data": {},
         "paramvals": {}
+      },
+      {
+        "id": "org.apache.cordova.geolocation",
+        "version": "0.3.5",
+        "selectedState": "Included",
+        "data": {},
+        "paramvals": {}
       }
     ],
     "serviceMethods": [],
     "buildConfigurations": {
       "Android": {
         "platform_": "android",
+        "runtime_": "Cordova 3.x",
         "name_": "Android",
         "preferences_": {},
         "isActive_": true,
@@ -147,11 +155,11 @@
         "cordovaCLIVersion_": "3.3",
         "crosswalkVersion_": "stable",
         "appVersion_": "2014.09.02",
-        "runtime_": "Cordova 3.x",
         "appAuthor_": ""
       },
       "Android-Crosswalk": {
         "platform_": "android",
+        "runtime_": "Crosswalk with Cordova 3.x",
         "name_": "Android-Crosswalk",
         "preferences_": {},
         "isActive_": true,
@@ -165,11 +173,11 @@
         "excludedLibraries_": "",
         "cordovaCLIVersion_": "3.3",
         "crosswalkVersion_": "stable",
-        "appVersion_": "1.0.0",
-        "runtime_": "Crosswalk with Cordova 3.x"
+        "appVersion_": "1.0.0"
       },
       "iOS": {
         "platform_": "ios",
+        "runtime_": "Cordova 3.x",
         "name_": "iOS",
         "preferences_": {},
         "isActive_": true,
@@ -183,11 +191,11 @@
         "excludedLibraries_": "",
         "cordovaCLIVersion_": "3.3",
         "crosswalkVersion_": "stable",
-        "appVersion_": "1.0.0",
-        "runtime_": "Cordova 3.x"
+        "appVersion_": "1.0.0"
       },
       "Windows8": {
         "platform_": "windows8",
+        "runtime_": "Cordova 3.x",
         "name_": "Windows8",
         "preferences_": {},
         "isActive_": true,
@@ -201,11 +209,11 @@
         "excludedLibraries_": "",
         "cordovaCLIVersion_": "3.3",
         "crosswalkVersion_": "stable",
-        "appVersion_": "1.0.0.0",
-        "runtime_": "Cordova 3.x"
+        "appVersion_": "1.0.0.0"
       },
       "WindowsPhone8": {
         "platform_": "wp8",
+        "runtime_": "Cordova 3.x",
         "name_": "WindowsPhone8",
         "preferences_": {},
         "isActive_": true,
@@ -219,8 +227,7 @@
         "excludedLibraries_": "",
         "cordovaCLIVersion_": "3.3",
         "crosswalkVersion_": "stable",
-        "appVersion_": "1.0.0.0",
-        "runtime_": "Cordova 3.x"
+        "appVersion_": "1.0.0.0"
       }
     }
   }

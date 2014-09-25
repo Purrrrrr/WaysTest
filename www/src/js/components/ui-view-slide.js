@@ -76,6 +76,7 @@ theWaysApp.directive('uiViewSlide', ['$rootScope', '$state', '$timeout', '$compi
         return false;
       }
       function getSlideNum() {
+        if (!contentBlock) return -1;
         return _.indexOf(element.parent().children(), contentBlock[0]);
       }
       function switchToThis() {
@@ -90,9 +91,10 @@ theWaysApp.directive('uiViewSlide', ['$rootScope', '$state', '$timeout', '$compi
           if (!contentBlock) {
             transcludeFn(scope, function(clone) {
               var viewScope = scope.$new();
+              viewScope.$viewName = name;
               contentBlock = clone;
               element.after(clone);
-              $compile('<div class="ui-view-slide" ui-view="'+name+'"></div>')(viewScope, function(viewElem, viewScope) {
+              $compile('<ng-include src="\'partials/components/ui-view-slide.html\'"></ng-include>')(viewScope, function(viewElem, viewScope) {
                 clone.append(viewElem);
               });
               slider.update();
@@ -125,8 +127,13 @@ theWaysApp.directive('uiViewSlide', ['$rootScope', '$state', '$timeout', '$compi
         $timeout(switchToThis, 10);
       }
       scope.$on("slideBox.slideChanged", function (event, d) {
+        /*
+        console.log(d);
+        console.log("Curindex: "+slider.currentIndex());
+        console.log("Curnum: " + getSlideNum());
+        */
         if (contentBlock && slider.currentIndex() == getSlideNum()) {
-          var viewData = contentBlock.children().data('$uiView');
+          var viewData = contentBlock.children().children().data('$uiView');
           var viewState = viewData && viewData.state && viewData.state.self.name;
           //console.log(viewData);
           if (viewState && viewState != $state.current.name) {

@@ -1,4 +1,4 @@
 <div id="districts" class="app-view">
-  <div class="gpsPos"> {{lat}} {{position}} {{distanceEira}}</div>
+  <div class="gpsPos"> {{position.latitude}} {{position.longitude}}</div>
   <div ng-repeat="district in  districts" class="district" ng-class="[district.specialClass, district.color, district.size]" ng-click="district.click()">{{district.name}}</div>
 </div>
